@@ -1,0 +1,10 @@
+.sub-menu {
+  display: none; /* Secara default, sembunyikan sub-menu */
+  position: absolute; /* Agar dropdown berada di atas item menu */
+  background-color: #fff; /* Warna latar belakang dropdown */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Bayangan agar terlihat mengambang */
+}
+
+.menu-item {
+  position: relative; /* Pastikan elemen menu parent relative untuk menempatkan sub-menu dengan benar */
+}

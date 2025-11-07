@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>(() => { class RocketLazyLoadScripts { constructor() { this.v = "2.0.4", this.userEvents = ["keydown", "keyup", "mousedown", "mouseup", "mousemove", "mouseover", "mouseout", "touchmove", "touchstart", "touchend", "touchcancel", "wheel", "click", "dblclick", "input"], this.attributeEvents = ["onblur", "onclick", "oncontextmenu", "ondblclick", "onfocus", "onmousedown", "onmouseenter", "onmouseleave", "onmousemove", "onmouseout", "onmouseover", "onmouseup", "onmousewheel", "onscroll", "onsubmit"] } async t() { this.i(), this.o(), /iP(ad|hone)/.test(navigator.userAgent) && this.h(), this.u(), this.l(this), this.m(), this.k(this), this.p(this), this._(), await Promise.all([this.R(), this.L()]), this.lastBreath = Date.now(), this.S(this), this.P(), this.D(), this.O(), this.M(), await this.C(this.delayedScripts.normal), await this.C(this.delayedScripts.defer), await this.C(this.delayedScripts.async), await this.T(), await this.F(), await this.j(), await this.A(), window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this.everythingLoaded = !0, this.lastTouchEnd && await new Promise(t => setTimeout(t, 500 - Date.now() + this.lastTouchEnd)), this.I(), this.H(), this.U(), this.W() } i() { this.CSPIssue = sessionStorage.getItem("rocketCSPIssue"), document.addEventListener("securitypolicyviolation", t => { this.CSPIssue || "script-src-elem" !== t.violatedDirective || "data" !== t.blockedURI || (this.CSPIssue = !0, sessionStorage.setItem("rocketCSPIssue", !0)) }, { isRocket: !0 }) } o() { window.addEventListener("pageshow", t => { this.persisted = t.persisted, this.realWindowLoadedFired = !0 }, { isRocket: !0 }), window.addEventListener("pagehide", () => { this.onFirstUserAction = null }, { isRocket: !0 }) } h() { let t; function e(e) { t = e } window.addEventListener("touchstart", e, { isRocket: !0 }), window.addEventListener("touchend", function i(o) { o.changedTouches[0] && t.changedTouches[0] && Math.abs(o.changedTouches[0].pageX - t.changedTouches[0].pageX) < 10 && Math.abs(o.changedTouches[0].pageY - t.changedTouches[0].pageY) < 10 && o.timeStamp - t.timeStamp < 200 && (window.removeEventListener("touchstart", e, { isRocket: !0 }), window.removeEventListener("touchend", i, { isRocket: !0 }), "INPUT" === o.target.tagName && "text" === o.target.type || (o.target.dispatchEvent(new TouchEvent("touchend", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new MouseEvent("mouseover", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new PointerEvent("click", { target: o.target, bubbles: !0, cancelable: !0, detail: 1, clientX: o.changedTouches[0].clientX, clientY: o.changedTouches[0].clientY })), event.preventDefault())) }, { isRocket: !0 }) } q(t) { this.userActionTriggered || ("mousemove" !== t.type || this.firstMousemoveIgnored ? "keyup" === t.type || "mouseover" === t.type || "mouseout" === t.type || (this.userActionTriggered = !0, this.onFirstUserAction && this.onFirstUserAction()) : this.firstMousemoveIgnored = !0), "click" === t.type && t.preventDefault(), t.stopPropagation(), t.stopImmediatePropagation(), "touchstart" === this.lastEvent && "touchend" === t.type && (this.lastTouchEnd = Date.now()), "click" === t.type && (this.lastTouchEnd = 0), this.lastEvent = t.type, t.composedPath && t.composedPath()[0].getRootNode() instanceof ShadowRoot && (t.rocketTarget = t.composedPath()[0]), this.savedUserEvents.push(t) } u() { this.savedUserEvents = [], this.userEventHandler = this.q.bind(this), this.userEvents.forEach(t => window.addEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.addEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }) } U() { this.userEvents.forEach(t => window.removeEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.removeEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }), this.savedUserEvents.forEach(t => { (t.rocketTarget || t.target).dispatchEvent(new window[t.constructor.name](t.type, t)) }) } m() { const t = "return false", e = Array.from(this.attributeEvents, t => "data-rocket-" + t), i = "[" + this.attributeEvents.join("],[") + "]", o = "[data-rocket-" + this.attributeEvents.join("],[data-rocket-") + "]", s = (e, i, o) => { o && o !== t && (e.setAttribute("data-rocket-" + i, o), e["rocket" + i] = new Function("event", o), e.setAttribute(i, t)) }; new MutationObserver(t => { for (const n of t) "attributes" === n.type && (n.attributeName.startsWith("data-rocket-") || this.everythingLoaded ? n.attributeName.startsWith("data-rocket-") && this.everythingLoaded && this.N(n.target, n.attributeName.substring(12)) : s(n.target, n.attributeName, n.target.getAttribute(n.attributeName))), "childList" === n.type && n.addedNodes.forEach(t => { if (t.nodeType === Node.ELEMENT_NODE) if (this.everythingLoaded) for (const i of [t, ...t.querySelectorAll(o)]) for (const t of i.getAttributeNames()) e.includes(t) && this.N(i, t.substring(12)); else for (const e of [t, ...t.querySelectorAll(i)]) for (const t of e.getAttributeNames()) this.attributeEvents.includes(t) && s(e, t, e.getAttribute(t)) }) }).observe(document, { subtree: !0, childList: !0, attributeFilter: [...this.attributeEvents, ...e] }) } I() { this.attributeEvents.forEach(t => { document.querySelectorAll("[data-rocket-" + t + "]").forEach(e => { this.N(e, t) }) }) } N(t, e) { const i = t.getAttribute("data-rocket-" + e); i && (t.setAttribute(e, i), t.removeAttribute("data-rocket-" + e)) } k(t) { Object.defineProperty(HTMLElement.prototype, "onclick", { get() { return this.rocketonclick || null }, set(e) { this.rocketonclick = e, this.setAttribute(t.everythingLoaded ? "onclick" : "data-rocket-onclick", "this.rocketonclick(event)") } }) } S(t) { function e(e, i) { let o = e[i]; e[i] = null, Object.defineProperty(e, i, { get: () => o, set(s) { t.everythingLoaded ? o = s : e["rocket" + i] = o = s } }) } e(document, "onreadystatechange"), e(window, "onload"), e(window, "onpageshow"); try { Object.defineProperty(document, "readyState", { get: () => t.rocketReadyState, set(e) { t.rocketReadyState = e }, configurable: !0 }), document.readyState = "loading" } catch (t) { console.log("WPRocket DJE readyState conflict, bypassing") } } l(t) { this.originalAddEventListener = EventTarget.prototype.addEventListener, this.originalRemoveEventListener = EventTarget.prototype.removeEventListener, this.savedEventListeners = [], EventTarget.prototype.addEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalAddEventListener.call(this, e, i, o) : (t.savedEventListeners.push({ target: this, remove: !1, type: e, func: i, options: o }), "mouseenter" !== e && "mouseleave" !== e || t.originalAddEventListener.call(this, e, t.savedUserEvents.push, o)) }, EventTarget.prototype.removeEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalRemoveEventListener.call(this, e, i, o) : t.savedEventListeners.push({ target: this, remove: !0, type: e, func: i, options: o }) } } J(t, e) { this.savedEventListeners = this.savedEventListeners.filter(i => { let o = i.type, s = i.target || window; return e !== o || t !== s || (this.B(o, s) && (i.type = "rocket-" + o), this.$(i), !1) }) } H() { EventTarget.prototype.addEventListener = this.originalAddEventListener, EventTarget.prototype.removeEventListener = this.originalRemoveEventListener, this.savedEventListeners.forEach(t => this.$(t)) } $(t) { t.remove ? this.originalRemoveEventListener.call(t.target, t.type, t.func, t.options) : this.originalAddEventListener.call(t.target, t.type, t.func, t.options) } p(t) { let e; function i(e) { return t.everythingLoaded ? e : e.split(" ").map(t => "load" === t || t.startsWith("load.") ? "rocket-jquery-load" : t).join(" ") } function o(o) { function s(e) { const s = o.fn[e]; o.fn[e] = o.fn.init.prototype[e] = function () { return this[0] === window && t.userActionTriggered && ("string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = i(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach(t => { const e = arguments[0][t]; delete arguments[0][t], arguments[0][i(t)] = e })), s.apply(this, arguments), this } } if (o && o.fn && !t.allJQueries.includes(o)) { const e = { DOMContentLoaded: [], "rocket-DOMContentLoaded": [] }; for (const t in e) document.addEventListener(t, () => { e[t].forEach(t => t()) }, { isRocket: !0 }); o.fn.ready = o.fn.init.prototype.ready = function (i) { function s() { parseInt(o.fn.jquery) > 2 ? setTimeout(() => i.bind(document)(o)) : i.bind(document)(o) } return "function" == typeof i && (t.realDomReadyFired ? !t.userActionTriggered || t.fauxDomReadyFired ? s() : e["rocket-DOMContentLoaded"].push(s) : e.DOMContentLoaded.push(s)), o([]) }, s("on"), s("one"), s("off"), t.allJQueries.push(o) } e = o } t.allJQueries = [], o(window.jQuery), Object.defineProperty(window, "jQuery", { get: () => e, set(t) { o(t) } }) } P() { const t = new Map; document.write = document.writeln = function (e) { const i = document.currentScript, o = document.createRange(), s = i.parentElement; let n = t.get(i); void 0 === n && (n = i.nextSibling, t.set(i, n)); const c = document.createDocumentFragment(); o.setStart(c, 0), c.appendChild(o.createContextualFragment(e)), s.insertBefore(c, n) } } async R() { return new Promise(t => { this.userActionTriggered ? t() : this.onFirstUserAction = t }) } async L() { return new Promise(t => { document.addEventListener("DOMContentLoaded", () => { this.realDomReadyFired = !0, t() }, { isRocket: !0 }) }) } async j() { return this.realWindowLoadedFired ? Promise.resolve() : new Promise(t => { window.addEventListener("load", t, { isRocket: !0 }) }) } M() { this.pendingScripts = []; this.scriptsMutationObserver = new MutationObserver(t => { for (const e of t) e.addedNodes.forEach(t => { "SCRIPT" !== t.tagName || t.noModule || t.isWPRocket || this.pendingScripts.push({ script: t, promise: new Promise(e => { const i = () => { const i = this.pendingScripts.findIndex(e => e.script === t); i >= 0 && this.pendingScripts.splice(i, 1), e() }; t.addEventListener("load", i, { isRocket: !0 }), t.addEventListener("error", i, { isRocket: !0 }), setTimeout(i, 1e3) }) }) }) }), this.scriptsMutationObserver.observe(document, { childList: !0, subtree: !0 }) } async F() { await this.X(), this.pendingScripts.length ? (await this.pendingScripts[0].promise, await this.F()) : this.scriptsMutationObserver.disconnect() } D() { this.delayedScripts = { normal: [], async: [], defer: [] }, document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t => { t.hasAttribute("data-rocket-src") ? t.hasAttribute("async") && !1 !== t.async ? this.delayedScripts.async.push(t) : t.hasAttribute("defer") && !1 !== t.defer || "module" === t.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(t) : this.delayedScripts.normal.push(t) : this.delayedScripts.normal.push(t) }) } async _() { await this.L(); let t = []; document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e => { let i = e.getAttribute("data-rocket-src"); if (i && !i.startsWith("data:")) { i.startsWith("//") && (i = location.protocol + i); try { const o = new URL(i).origin; o !== location.origin && t.push({ src: o, crossOrigin: e.crossOrigin || "module" === e.getAttribute("data-rocket-type") }) } catch (t) { } } }), t = [...new Map(t.map(t => [JSON.stringify(t), t])).values()], this.Y(t, "preconnect") } async G(t) { if (await this.K(), !0 !== t.noModule || !("noModule" in HTMLScriptElement.prototype)) return new Promise(e => { let i; function o() { (i || t).setAttribute("data-rocket-status", "executed"), e() } try { if (navigator.userAgent.includes("Firefox/") || "" === navigator.vendor || this.CSPIssue) i = document.createElement("script"), [...t.attributes].forEach(t => { let e = t.nodeName; "type" !== e && ("data-rocket-type" === e && (e = "type"), "data-rocket-src" === e && (e = "src"), i.setAttribute(e, t.nodeValue)) }), t.text && (i.text = t.text), t.nonce && (i.nonce = t.nonce), i.hasAttribute("src") ? (i.addEventListener("load", o, { isRocket: !0 }), i.addEventListener("error", () => { i.setAttribute("data-rocket-status", "failed-network"), e() }, { isRocket: !0 }), setTimeout(() => { i.isConnected || e() }, 1)) : (i.text = t.text, o()), i.isWPRocket = !0, t.parentNode.replaceChild(i, t); else { const i = t.getAttribute("data-rocket-type"), s = t.getAttribute("data-rocket-src"); i ? (t.type = i, t.removeAttribute("data-rocket-type")) : t.removeAttribute("type"), t.addEventListener("load", o, { isRocket: !0 }), t.addEventListener("error", i => { this.CSPIssue && i.target.src.startsWith("data:") ? (console.log("WPRocket: CSP fallback activated"), t.removeAttribute("src"), this.G(t).then(e)) : (t.setAttribute("data-rocket-status", "failed-network"), e()) }, { isRocket: !0 }), s ? (t.fetchPriority = "high", t.removeAttribute("data-rocket-src"), t.src = s) : t.src = "data:text/javascript;base64," + window.btoa(unescape(encodeURIComponent(t.text))) } } catch (i) { t.setAttribute("data-rocket-status", "failed-transform"), e() } }); t.setAttribute("data-rocket-status", "skipped") } async C(t) { const e = t.shift(); return e ? (e.isConnected && await this.G(e), this.C(t)) : Promise.resolve() } O() { this.Y([...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async], "preload") } Y(t, e) { this.trash = this.trash || []; let i = !0; var o = document.createDocumentFragment(); t.forEach(t => { const s = t.getAttribute && t.getAttribute("data-rocket-src") || t.src; if (s && !s.startsWith("data:")) { const n = document.createElement("link"); n.href = s, n.rel = e, "preconnect" !== e && (n.as = "script", n.fetchPriority = i ? "high" : "low"), t.getAttribute && "module" === t.getAttribute("data-rocket-type") && (n.crossOrigin = !0), t.crossOrigin && (n.crossOrigin = t.crossOrigin), t.integrity && (n.integrity = t.integrity), t.nonce && (n.nonce = t.nonce), o.appendChild(n), this.trash.push(n), i = !1 } }), document.head.appendChild(o) } W() { this.trash.forEach(t => t.remove()) } async T() { try { document.readyState = "interactive" } catch (t) { } this.fauxDomReadyFired = !0; try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(document, "DOMContentLoaded"), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this.K(), this.J(window, "DOMContentLoaded"), window.dispatchEvent(new Event("rocket-DOMContentLoaded")) } catch (t) { console.error(t) } } async A() { try { document.readyState = "complete" } catch (t) { } try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(window, "load"), window.dispatchEvent(new Event("rocket-load")), await this.K(), window.rocketonload && window.rocketonload(), await this.K(), this.allJQueries.forEach(t => t(window).trigger("rocket-jquery-load")), await this.K(), this.J(window, "pageshow"); const t = new Event("rocket-pageshow"); t.persisted = this.persisted, window.dispatchEvent(t), await this.K(), window.rocketonpageshow && window.rocketonpageshow({ persisted: this.persisted }) } catch (t) { console.error(t) } } async K() { Date.now() - this.lastBreath > 45 && (await this.X(), this.lastBreath = Date.now()) } async X() { return document.hidden ? new Promise(t => setTimeout(t)) : new Promise(t => requestAnimationFrame(t)) } B(t, e) { return e === document && "readystatechange" === t || (e === document && "DOMContentLoaded" === t || (e === window && "DOMContentLoaded" === t || (e === window && "load" === t || e === window && "pageshow" === t))) } static run() { (new RocketLazyLoadScripts).t() } } RocketLazyLoadScripts.run() })();</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!-- PVC Template -->
+
+	<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+	<title>Tentang Kami - Sukses CPNS</title>
+
+	<link rel="preload" data-rocket-preload as="image"
+		href="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp"
+		imagesrcset="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 768w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 300w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 1024w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 150w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 600w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 100w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 1080w"
+		imagesizes="(max-width: 768px) 100vw, 768px" fetchpriority="high">
+	<meta name="description"
+		content="   Sukses CPNS adalah sebuah lembaga konsultan pendidikan yang bertujuan untuk mencetak generasi terbaik bangsa yang siap mengabdi kepada negara sebagai" />
+	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+	<link rel="canonical" href="/tentang-kami/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Tentang Kami - Sukses CPNS" />
+	<meta property="og:description"
+		content="   Sukses CPNS adalah sebuah lembaga konsultan pendidikan yang bertujuan untuk mencetak generasi terbaik bangsa yang siap mengabdi kepada negara sebagai" />
+	<meta property="og:url" content="/tentang-kami/" />
+	<meta property="og:site_name" content="Sukses CPNS" />
+	<meta property="og:updated_time" content="2024-08-03T10:25:15+07:00" />
+	<meta property="og:image"
+		content="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp" />
+	<meta property="og:image:secure_url"
+		content="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp" />
+	<meta property="og:image:alt" content="Tentang Kami" />
+	<meta property="article:published_time" content="2024-03-20T15:54:28+07:00" />
+	<meta property="article:modified_time" content="2024-08-03T10:25:15+07:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Tentang Kami - Sukses CPNS" />
+	<meta name="twitter:description"
+		content="   Sukses CPNS adalah sebuah lembaga konsultan pendidikan yang bertujuan untuk mencetak generasi terbaik bangsa yang siap mengabdi kepada negara sebagai" />
+	<meta name="twitter:image"
+		content="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp" />
+	<meta name="twitter:label1" content="Time to read" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json"
+		class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"/#organization","name":"Sukses CPNS","logo":{"@type":"ImageObject","@id":"/#logo","url":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-scaled.webp","contentUrl":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-scaled.webp","caption":"Sukses CPNS","inLanguage":"en-US","width":"2560","height":"469"}},{"@type":"WebSite","@id":"/#website","url":"https://suksescpns.id","name":"Sukses CPNS","publisher":{"@id":"/#organization"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp","url":"/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"/tentang-kami/#webpage","url":"/tentang-kami/","name":"Tentang Kami - Sukses CPNS","datePublished":"2024-03-20T15:54:28+07:00","dateModified":"2024-08-03T10:25:15+07:00","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp"},"inLanguage":"en-US"},{"@type":"Person","@id":"/author/sukses-cpns/","name":"mas bam","url":"/author/sukses-cpns/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/4dde89f955e52ee6c088ab33fa89134b4f065e05497fe99ae24235d9c397c63b?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/4dde89f955e52ee6c088ab33fa89134b4f065e05497fe99ae24235d9c397c63b?s=96&amp;d=mm&amp;r=g","caption":"mas bam","inLanguage":"en-US"},"sameAs":["https://suksescpns.id"],"worksFor":{"@id":"/#organization"}},{"@type":"Article","headline":"Tentang Kami - Sukses CPNS","datePublished":"2024-03-20T15:54:28+07:00","dateModified":"2024-08-03T10:25:15+07:00","author":{"@id":"/author/sukses-cpns/","name":"mas bam"},"publisher":{"@id":"/#organization"},"description":"\u00a0 \u00a0Sukses CPNS adalah sebuah lembaga konsultan pendidikan yang bertujuan untuk mencetak generasi terbaik bangsa yang siap mengabdi kepada negara sebagai","name":"Tentang Kami - Sukses CPNS","@id":"/tentang-kami/#richSnippet","isPartOf":{"@id":"/tentang-kami/#webpage"},"image":{"@id":"/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/tentang-kami/#webpage"}}]}</script>
+	<!-- /Rank Math WordPress SEO plugin -->
+
+	<script type="rocketlazyloadscript" data-rocket-src="wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+		id="jquery-core-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+		id="jquery-migrate-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/underscore.min.js?ver=1.13.7"
+		id="underscore-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/backbone.min.js?ver=1.6.0" id="backbone-js"
+		data-rocket-defer defer></script>
+	<script id="a3-pvc-backbone-js-extra">
+		var pvc_vars = { "rest_api_url": "https:\/\/suksescpns.id\/wp-json\/pvc\/v1", "ajax_url": "https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php", "security": "a1d46591f9", "ajax_load_type": "rest_api" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/page-views-count/assets/js/pvc.backbone.min.js?ver=2.8.7"
+		id="a3-pvc-backbone-js" data-rocket-defer defer></script>
+
+	<!-- Google tag (gtag.js) snippet added by Site Kit -->
+	<!-- Google Analytics snippet added by Site Kit -->
+	<script type="rocketlazyloadscript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-1E82CVDCML"
+		id="google_gtagjs-js" async></script>
+	<script type="rocketlazyloadscript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["suksescpns.id"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-1E82CVDCML");
+</script>
+	
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MMD5RZP');</script>
+	<!-- End Google Tag Manager -->
+	<!-- /end HFCM by 99 Robots -->
+
+	<script type="rocketlazyloadscript">
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:3838040,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	<meta name="generator"
+		content="Elementor 3.32.2; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+
+	<script src="/js/head-loader.js"></script>
+</head>
+
+<body
+	class="wp-singular page-template page-template-elementor_header_footer page page-id-4993 wp-custom-logo wp-theme-hello-elementor elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-4993">
+
+	<header></header>
+
+	<div data-elementor-type="wp-page" data-elementor-id="4993" class="elementor elementor-4993"
+		data-elementor-post-type="page">
+		<div class="elementor-element elementor-element-f6608b7 e-flex e-con-boxed e-con e-parent" data-id="f6608b7"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-bfce654 e-con-full e-flex e-con e-child"
+					data-id="bfce654" data-element_type="container">
+					<div class="elementor-element elementor-element-fa8da25 elementor-widget__width-initial elementor-widget elementor-widget-image"
+						data-id="fa8da25" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<img fetchpriority="high" decoding="async" width="768" height="768"
+								src="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp"
+								class="attachment-medium_large size-medium_large wp-image-5572" alt=""
+								srcset="/wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 768w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 300w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 1024w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 150w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 600w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 100w, /wp-content/uploads/2024/05/07-asset-web-sukses-cpns-66485ce1b63c1-768x768.webp 1080w"
+								sizes="(max-width: 768px) 100vw, 768px" />
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-d6b4a93 e-con-full e-flex e-con e-child"
+					data-id="d6b4a93" data-element_type="container">
+					<div class="elementor-element elementor-element-0768ecc elementor-widget elementor-widget-heading"
+						data-id="0768ecc" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h2 class="elementor-heading-title elementor-size-default">Tentang SUKSES CPNS</h2>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-01f4a8a elementor-widget elementor-widget-text-editor"
+						data-id="01f4a8a" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>   Sukses CPNS adalah sebuah lembaga konsultan pendidikan yang bertujuan untuk
+								<strong>mencetak generasi terbaik bangsa</strong> yang siap mengabdi kepada negara
+								sebagai Aparatur Sipil Negara (ASN). Sukses CPNS menyediakan berbagai program yang
+								disesuaikan dengan kebutuhan peserta CPNS dan PPPK, mulai dari materi pembelajaran,
+								simulasi ujian berbasis CAT, hingga layanan bimbingan untuk mempersiapkan peserta secara
+								optimal.
+							</p>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-a3d1816 elementor-widget elementor-widget-text-editor"
+						data-id="a3d1816" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>   Berdiri sejak tahun 2012, kami menjadi salah satu <strong>pelopor pusat bimbel
+									persiapan tes seleksi CASN</strong> di Indonesia yang <strong>terbaik</strong> .
+								Kami memberikan layanan <strong>Terpercaya, Terlengkap dan Bergaransi</strong>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-16eed35 e-flex e-con-boxed e-con e-parent" data-id="16eed35"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-99ec082 e-con-full e-flex e-con e-child"
+					data-id="99ec082" data-element_type="container">
+					<div class="elementor-element elementor-element-bb6fa6a elementor-widget elementor-widget-text-editor"
+						data-id="bb6fa6a" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>   Program pembelajaran persiapan tes CPNS &amp; PPPK kami dilakukan secara
+								<strong>intensif</strong> dengan sistem karantina, kelas, privat, dan online class yang
+								menjangkau seluruh Indonesia. Kami memberikan soal try out yang <strong>super prediktif,
+									terbaru, dan tepat</strong> dengan sistem CAT dan <strong>tim pengajar profesional
+									dan kompeten</strong> yang sangat siap membantu peserta lulus tes seleksi CASN.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-26f0736 e-con-full e-flex e-con e-child"
+					data-id="26f0736" data-element_type="container">
+					<div class="elementor-element elementor-element-adbf933 elementor-widget__width-initial elementor-widget elementor-widget-image"
+						data-id="adbf933" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<img decoding="async" width="768" height="768"
+								src="/wp-content/uploads/2024/03/footer-image-768x768.webp"
+								class="attachment-medium_large size-medium_large wp-image-4650" alt=""
+								srcset="/wp-content/uploads/2024/03/footer-image-768x768.webp 768w, /wp-content/uploads/2024/03/footer-image-768x768.webp 300w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1024w, /wp-content/uploads/2024/03/footer-image-768x768.webp 150w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1536w, /wp-content/uploads/2024/03/footer-image-768x768.webp 600w, /wp-content/uploads/2024/03/footer-image-768x768.webp 100w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1706w"
+								sizes="(max-width: 768px) 100vw, 768px" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-d6bfb4a e-flex e-con-boxed e-con e-parent" data-id="d6bfb4a"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-1ddb700 elementor-widget elementor-widget-heading"
+					data-id="1ddb700" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Program Kami</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-2251ecc elementor-widget elementor-widget-heading"
+					data-id="2251ecc" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Info Program SUKSES CPNS</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-ab35065 e-con-full e-flex e-con e-child"
+					data-id="ab35065" data-element_type="container">
+					<div class="elementor-element elementor-element-ddbb418 e-con-full e-flex e-con e-child"
+						data-id="ddbb418" data-element_type="container">
+						<div class="elementor-element elementor-element-bcddf4e e-con-full e-flex e-con e-child"
+							data-id="bcddf4e" data-element_type="container">
+							<div class="elementor-element elementor-element-0a2cfde elementor-widget elementor-widget-heading"
+								data-id="0a2cfde" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">Sukses Persiapan Seleksi
+										CPNS</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-28afa05 elementor-widget elementor-widget-text-editor"
+								data-id="28afa05" data-element_type="widget" data-widget_type="text-editor.default">
+								<div class="elementor-widget-container">
+									<p>   Program persiapan seleksi CPNS ini bertujuan untuk meningkatkan kemampuan
+										peserta dalam menghadapi berbagai tahapan seleksi, seperti Tes Intelegensi Umum
+										(TIU), Tes Wawasan Kebangsaan (TWK), Tes Karakteristik Pribadi (TKP), dan
+										Seleksi Kemampuan Bidang (SKB)</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-9a7a4c8 e-con-full e-flex e-con e-child"
+						data-id="9a7a4c8" data-element_type="container">
+						<div class="elementor-element elementor-element-941d32e e-con-full e-flex e-con e-child"
+							data-id="941d32e" data-element_type="container">
+							<div class="elementor-element elementor-element-cfda6c9 elementor-widget elementor-widget-heading"
+								data-id="cfda6c9" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">Sukses Persiapan Seleksi
+										PPPK</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-c291825 elementor-widget elementor-widget-text-editor"
+								data-id="c291825" data-element_type="widget" data-widget_type="text-editor.default">
+								<div class="elementor-widget-container">
+									<p>    Program persiapan seleksi PPPK ini bertujuan untuk meningkatkan kemampuan
+										peserta dalam menghadapi berbagai tahapan seleksi, seperti Tes Sosio Kultural,
+										Tes Manajerial dan Tes Teknis</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-65126d3 e-con-full e-flex e-con e-child"
+						data-id="65126d3" data-element_type="container">
+						<div class="elementor-element elementor-element-d4a3452 e-con-full e-flex e-con e-child"
+							data-id="d4a3452" data-element_type="container">
+							<div class="elementor-element elementor-element-c47e125 elementor-widget elementor-widget-heading"
+								data-id="c47e125" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">Sukses Persiapan Seleksi
+										BUMN</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-ee532c2 elementor-widget elementor-widget-text-editor"
+								data-id="ee532c2" data-element_type="widget" data-widget_type="text-editor.default">
+								<div class="elementor-widget-container">
+									<p>    Merupakan program pendidikan yang disiapkan khusus untuk membantu calon
+										karyawan yang ingin bergabung dengan Badan Usaha Milik Negara (BUMN) dalam
+										menghadapi proses seleksi.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-49de982 e-flex e-con-boxed e-con e-parent" data-id="49de982"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-fd347ca elementor-widget elementor-widget-heading"
+					data-id="fd347ca" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">SUKSES CPNS</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-e67720a elementor-widget elementor-widget-heading"
+					data-id="e67720a" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Telah Terbukti</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-846b8f3 e-con-full e-flex e-con e-child"
+					data-id="846b8f3" data-element_type="container">
+					<div class="elementor-element elementor-element-bd2e770 e-con-full e-flex e-con e-child"
+						data-id="bd2e770" data-element_type="container">
+						<div class="elementor-element elementor-element-b58750c elementor-view-framed elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+							data-id="b58750c" data-element_type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-icon-box-wrapper">
+
+									<div class="elementor-icon-box-icon">
+										<span class="elementor-icon">
+											<svg xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px"
+												viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;"
+												xml:space="preserve">
+												<style type="text/css">
+													.st0 {
+														fill: #7A512B;
+													}
+												</style>
+												<path class="st0"
+													d="M262.3,376.6l-135.2,69.6c-16.7,8.6-27.1,25.7-27.1,44.5v26c0,27.6,22.4,50,50,50c9.2,0,16.7,7.5,16.7,16.7 S159.2,600,150,600c-46,0-83.3-37.3-83.3-83.3v-26c0-31.2,17.4-59.8,45.2-74.1L223.8,359c-35.7-31.1-57.1-76.5-57.1-125.6 c0-92,74.6-166.7,166.7-166.7c55.9,0,107.1,27.7,137.9,73.1c5.2,7.6,3.2,18-4.4,23.2c-7.6,5.2-18,3.2-23.2-4.4 C419,122.2,378.1,100,333.3,100C259.7,100,200,159.7,200,233.3c0,47.1,24.6,89.9,64,113.9c7.9,4.8,10.3,15,5.5,22.9 C267.8,373.1,265.2,375.3,262.3,376.6L262.3,376.6z M398.7,518.9l-136.1,61.8c-17.8,8.1-29.3,25.9-29.3,45.5V650 c0,27.6,22.4,50,50,50H650c27.6,0,50-22.4,50-50v-23.7c0-19.6-11.5-37.4-29.3-45.5l-136.1-61.8c-20.8,9.3-43.8,14.4-68,14.4 S419.5,528.2,398.7,518.9L398.7,518.9z M364.1,498c-39-30.5-64.1-78-64.1-131.4c0-92,74.6-166.7,166.7-166.7s166.7,74.6,166.7,166.7 c0,53.4-25.1,100.9-64.1,131.4l115.2,52.4c29.7,13.5,48.8,43.2,48.8,75.9V650c0,46-37.3,83.3-83.3,83.3H283.3 c-46,0-83.3-37.3-83.3-83.3v-23.7c0-32.7,19.1-62.3,48.8-75.9L364.1,498L364.1,498z M466.7,500c73.6,0,133.3-59.7,133.3-133.3 s-59.7-133.3-133.3-133.3S333.3,293,333.3,366.7S393,500,466.7,500z">
+												</path>
+											</svg> </span>
+									</div>
+
+									<div class="elementor-icon-box-content">
+
+										<h3 class="elementor-icon-box-title">
+											<span>
+												1,2K+ </span>
+										</h3>
+
+										<p class="elementor-icon-box-description">
+											Alumni SUKSES CPNS </p>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-6440821 elementor-view-framed elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+							data-id="6440821" data-element_type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-icon-box-wrapper">
+
+									<div class="elementor-icon-box-icon">
+										<span class="elementor-icon">
+											<svg xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px"
+												viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;"
+												xml:space="preserve">
+												<style type="text/css">
+													.st0 {
+														fill: #7A512B;
+													}
+												</style>
+												<path class="st0"
+													d="M617.8,550.4L502.6,498c39-30.5,64.1-78,64.1-131.4c0-92-74.6-166.7-166.7-166.7c-92,0-166.7,74.6-166.7,166.7 c0,53.4,25.1,100.9,64.1,131.4l-115.2,52.4c-11,5-20.6,12.2-28.3,21.1C119.9,522.9,100,463.8,100,400c0-165.7,134.3-300,300-300 c165.7,0,300,134.3,300,300c0,63.8-19.9,122.9-53.8,171.5C638.4,562.6,628.8,555.4,617.8,550.4 M266.7,366.7 c0-73.6,59.7-133.3,133.3-133.3S533.3,293,533.3,366.7S473.6,500,400,500S266.7,440.3,266.7,366.7 M400,700 c-89.6,0-169.9-39.2-224.9-101.5c5.1-7.7,12.3-13.9,20.9-17.8l136.1-61.9c20.7,9.3,43.7,14.4,67.9,14.4c24.2,0,47.2-5.2,68-14.4 L604,580.8c8.6,3.9,15.8,10.1,20.9,17.8C570,660.8,489.6,700,400,700 M400,66.7C215.9,66.7,66.7,215.9,66.7,400 S215.9,733.3,400,733.3S733.3,584.1,733.3,400S584.1,66.7,400,66.7">
+												</path>
+											</svg> </span>
+									</div>
+
+									<div class="elementor-icon-box-content">
+
+										<h3 class="elementor-icon-box-title">
+											<span>
+												581+ </span>
+										</h3>
+
+										<p class="elementor-icon-box-description">
+											Pengajar Profesional </p>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-5f991d1 elementor-view-framed elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+							data-id="5f991d1" data-element_type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-icon-box-wrapper">
+
+									<div class="elementor-icon-box-icon">
+										<span class="elementor-icon">
+											<svg xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px"
+												viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;"
+												xml:space="preserve">
+												<style type="text/css">
+													.st0 {
+														fill: #7A512B;
+													}
+												</style>
+												<path class="st0"
+													d="M666.7,383.3c0-9.2,7.5-16.7,16.7-16.7c9.2,0,16.7,7.5,16.7,16.7v233.3c0,46-37.3,83.3-83.3,83.3H182.9 c-46,0-83.3-37.3-83.3-83.3V183.3c0-46,37.3-83.3,83.3-83.3h233.8c9.2,0,16.7,7.5,16.7,16.7s-7.5,16.7-16.7,16.7H182.9 c-27.6,0-50,22.4-50,50v433.3c0,27.6,22.4,50,50,50h433.8c27.6,0,50-22.4,50-50V383.3z M628.5,104.9l66.7,66.7 c6.5,6.5,6.5,17.1,0,23.6L428.5,461.8c-3.1,3.1-7.4,4.9-11.8,4.9H350c-9.2,0-16.7-7.5-16.7-16.7v-66.7c0-4.4,1.8-8.7,4.9-11.8 l266.7-266.7C611.4,98.4,621.9,98.4,628.5,104.9z M616.7,140.2l-250,250v43.1h43.1l250-250L616.7,140.2z">
+												</path>
+											</svg> </span>
+									</div>
+
+									<div class="elementor-icon-box-content">
+
+										<h3 class="elementor-icon-box-title">
+											<span>
+												10K </span>
+										</h3>
+
+										<p class="elementor-icon-box-description">
+											Jumlah Soal </p>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-0667487 elementor-view-framed elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+							data-id="0667487" data-element_type="widget" data-widget_type="icon-box.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-icon-box-wrapper">
+
+									<div class="elementor-icon-box-icon">
+										<span class="elementor-icon">
+											<svg xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px"
+												viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;"
+												xml:space="preserve">
+												<style type="text/css">
+													.st0 {
+														fill: #7A512B;
+													}
+												</style>
+												<path class="st0"
+													d="M400,466.7c-73.6,0-133.3-59.7-133.3-133.3S326.4,200,400,200s133.3,59.7,133.3,133.3S473.6,466.7,400,466.7z  M400,433.3c55.2,0,100-44.8,100-100s-44.8-100-100-100s-100,44.8-100,100S344.8,433.3,400,433.3z M411.3,695.6 c-6.4,5.9-16.2,5.9-22.6,0c-147.5-136.2-222-256.5-222-362.2C166.7,204.5,271.1,100,400,100s233.3,104.5,233.3,233.3 C633.3,439.1,558.8,559.4,411.3,695.6z M600,333.3c0-110.5-89.5-200-200-200s-200,89.5-200,200c0,91.7,66.2,201.2,200,327.2 C533.8,534.5,600,425.1,600,333.3z">
+												</path>
+											</svg> </span>
+									</div>
+
+									<div class="elementor-icon-box-content">
+
+										<h3 class="elementor-icon-box-title">
+											<span>
+												38 </span>
+										</h3>
+
+										<p class="elementor-icon-box-description">
+											Provinsi dilayani </p>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-d219283 e-flex e-con-boxed e-con e-parent" data-id="d219283"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-413c5cf elementor-widget elementor-widget-heading"
+					data-id="413c5cf" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Partner SUKSES CPNS</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-6a0d978 e-con-full e-flex e-con e-child"
+					data-id="6a0d978" data-element_type="container">
+					<div class="elementor-element elementor-element-b53c7f0 e-grid e-con-full e-con e-child"
+						data-id="b53c7f0" data-element_type="container">
+						<div class="elementor-element elementor-element-c2aafce elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="c2aafce" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="800"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-6794" alt=""
+									data-lazy-srcset="/wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 1000w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 300w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 150w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 768w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 600w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 100w"
+									data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+									data-lazy-src="/wp-content/uploads/2024/07/untitled-design-6685142128e42.webp" /><noscript><img
+										decoding="async" width="800" height="800"
+										src="/wp-content/uploads/2024/07/untitled-design-6685142128e42.webp"
+										class="attachment-large size-large wp-image-6794" alt=""
+										srcset="/wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 1000w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 300w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 150w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 768w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 600w, /wp-content/uploads/2024/07/untitled-design-6685142128e42.webp 100w"
+										sizes="(max-width: 800px) 100vw, 800px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-cd422d7 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="cd422d7" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="242"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20242'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-3089" alt=""
+									data-lazy-src="/wp-content/uploads/2023/08/logo-kemendag.svg" /><noscript><img
+										decoding="async" width="800" height="242"
+										src="/wp-content/uploads/2023/08/logo-kemendag.svg"
+										class="attachment-large size-large wp-image-3089" alt="" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-1fc4ba2 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="1fc4ba2" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="200" height="256"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20256'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-2564" alt=""
+									data-lazy-src="/wp-content/uploads/2023/08/logo-kemendagri-baru-risize-64d9a592c0a2f.webp" /><noscript><img
+										decoding="async" width="200" height="256"
+										src="/wp-content/uploads/2023/08/logo-kemendagri-baru-risize-64d9a592c0a2f.webp"
+										class="attachment-large size-large wp-image-2564" alt="" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-df0b941 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="df0b941" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="800"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-2688" alt="patner"
+									data-lazy-srcset="/wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 1024w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 300w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 150w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 768w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 600w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 100w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 1112w"
+									data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+									data-lazy-src="/wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp" /><noscript><img
+										decoding="async" width="800" height="800"
+										src="/wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp"
+										class="attachment-large size-large wp-image-2688" alt="patner"
+										srcset="/wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 1024w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 300w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 150w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 768w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 600w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 100w, /wp-content/uploads/2023/08/MA-e1719997617701-1024x1024.webp 1112w"
+										sizes="(max-width: 800px) 100vw, 800px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-e95d605 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="e95d605" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="800"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-2690" alt="patner"
+									data-lazy-srcset="/wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 1024w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 300w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 150w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 768w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 600w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 100w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 1225w"
+									data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+									data-lazy-src="/wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp" /><noscript><img
+										decoding="async" width="800" height="800"
+										src="/wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp"
+										class="attachment-large size-large wp-image-2690" alt="patner"
+										srcset="/wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 1024w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 300w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 150w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 768w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 600w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 100w, /wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-1024x1024.webp 1225w"
+										sizes="(max-width: 800px) 100vw, 800px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-a517512 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="a517512" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-2505" alt=""
+									data-lazy-srcset="/wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp 150w, /wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp 100w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp"
+										class="attachment-large size-large wp-image-2505" alt=""
+										srcset="/wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp 150w, /wp-content/uploads/2023/08/logo-rs-fatmawati-64d77634dbb42.webp 100w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-fc30f36 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="fc30f36" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="800"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-6832" alt=""
+									data-lazy-srcset="/wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 1024w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 300w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 150w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 768w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 600w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 100w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 1259w"
+									data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+									data-lazy-src="/wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp" /><noscript><img
+										decoding="async" width="800" height="800"
+										src="/wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp"
+										class="attachment-large size-large wp-image-6832" alt=""
+										srcset="/wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 1024w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 300w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 150w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 768w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 600w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 100w, /wp-content/uploads/2024/07/logo-provinsi-bengkulu-668518bbcfdcd-1024x1024.webp 1259w"
+										sizes="(max-width: 800px) 100vw, 800px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-7e89704 elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="7e89704" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="800" height="991"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20991'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-6831" alt=""
+									data-lazy-srcset="/wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 827w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 242w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 768w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 600w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 1015w"
+									data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+									data-lazy-src="/wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp" /><noscript><img
+										decoding="async" width="800" height="991"
+										src="/wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp"
+										class="attachment-large size-large wp-image-6831" alt=""
+										srcset="/wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 827w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 242w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 768w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 600w, /wp-content/uploads/2024/07/kab-serdang-bedagai-668518bc275e5-827x1024.webp 1015w"
+										sizes="(max-width: 800px) 100vw, 800px" /></noscript>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-732c2de elementor-widget__width-initial elementor-widget elementor-widget-image"
+							data-id="732c2de" data-element_type="widget" data-widget_type="image.default">
+							<div class="elementor-widget-container">
+								<img decoding="async" width="200" height="273"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20273'%3E%3C/svg%3E"
+									class="attachment-large size-large wp-image-2506" alt=""
+									data-lazy-src="/wp-content/uploads/2023/08/lp3i-risize-64d776359095c.webp" /><noscript><img
+										decoding="async" width="200" height="273"
+										src="/wp-content/uploads/2023/08/lp3i-risize-64d776359095c.webp"
+										class="attachment-large size-large wp-image-2506" alt="" /></noscript>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hello-elementor\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+	<link rel="stylesheet"
+		href="/wp-content/cache/background-css/1/suksescpns.id/wp-content/plugins/watzap/assets/vendor/intltel/css/intlTelInput.min.css?wpr_t=1762522647" />
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+		data-rocket-src="/wp-content/plugins/watzap/assets/vendor/intltel/js/intlTelInput.min.js"
+		data-rocket-defer defer></script>
+
+	<style type="text/css">
+		.iti__country {
+			margin: 0 !important;
+			padding: 5px 10px !important;
+		}
+
+		.iti__country-name,
+		.iti__flag-box {
+			color: black;
+			margin-right: 6px !important;
+
+		}
+
+		.iti__flag-box {
+			width: 20px !important;
+		}
+
+		.iti__flag {
+			height: 15px !important;
+			box-shadow: 0 0 1px 0 #888 !important;
+			background-image: var(--wpr-bg-e1f37e59-eb41-4d5d-ba32-9a32e24b0c3c) !important;
+			background-repeat: no-repeat !important;
+			background-color: #dbdbdb !important;
+			background-position: 20px 0 !important;
+			width: 20px !important;
+		}
+
+		.iti__divider {
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			margin-top: 0px !important;
+		}
+
+		.iti {
+			display: block !important;
+			position: relative !important;
+		}
+
+		.iti--separate-dial-code .iti__selected-dial-code {
+			color: black;
+			margin-left: 6px !important;
+		}
+
+		.iti__flag-container {
+			position: absolute !important;
+		}
+
+		.iti__selected-flag {
+			position: relative !important;
+			padding: 0 6px 0 8px !important;
+			height: 100% !important;
+		}
+
+		.iti__arrow {
+			margin-left: 6px !important;
+			width: 0 !important;
+			height: 0 !important;
+			border-left: 3px solid transparent !important;
+			border-right: 3px solid transparent !important;
+			border-top: 4px solid #555 !important;
+		}
+
+		.iti--separate-dial-code .iti__selected-flag {
+			background-color: rgba(0, 0, 0, .05) !important;
+		}
+
+		.iti__country-list {
+			position: absolute !important;
+			z-index: 2 !important;
+			list-style: none !important;
+			text-align: left !important;
+			padding: 0 !important;
+			margin: 0 0 0 -1px !important;
+			box-shadow: 1px 1px 4px rgb(0 0 0 / 20%) !important;
+			background-color: #fff !important;
+			border: 1px solid #ccc !important;
+			white-space: nowrap !important;
+			max-height: 200px !important;
+			overflow-y: scroll !important;
+			-webkit-overflow-scrolling: touch !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list {
+			position: absolute !important;
+			z-index: 2 !important;
+			list-style: none !important;
+			text-align: left !important;
+			padding: 0 !important;
+			margin: 0 0 0 -1px !important;
+			box-shadow: 1px 1px 4px rgb(0 0 0 / 20%) !important;
+			background-color: #fff !important;
+			border: 1px solid #ccc !important;
+			white-space: nowrap !important;
+			max-height: 200px !important;
+			overflow-y: scroll !important;
+			-webkit-overflow-scrolling: touch !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list li {
+			margin-bottom: 0px !important;
+			padding: 5px 10px !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list li.iti__highlight {
+			background-color: rgba(0, 0, 0, .05) !important;
+		}
+	</style>
+
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+
+        var wzp_serializer=function(e){for(var n=[],o=0;o<e.length;o++){var t=e[o];if(t.name&&!t.disabled&&"file"!==t.type&&"reset"!==t.type&&"submit"!==t.type&&"button"!==t.type)if("select-multiple"===t.type)for(var p=0;p<t.options.length;p++)t.options[p].selected&&n.push(encodeURIComponent(t.name)+"="+encodeURIComponent(t.options[p].value));else("checkbox"!==t.type&&"radio"!==t.type||t.checked)&&n.push(encodeURIComponent(t.name)+"="+encodeURIComponent(t.value))}return n.join("&")};
+        
+        try{
+
+          
+                var wzp_form_handler_1 = (wzp_prev_1) => { /in/.test(document.readyState) ? setTimeout("wzp_form_handler_1(" + wzp_prev_1 + ")", 10) : wzp_prev_1() }
+  
+                wzp_form_handler_1(function(){
+                    var fId1 = "keform";
+                    var element1 =  document.getElementById(fId1);
+                      if (typeof(element1) != "undefined" && element1 != null)
+                      {
+                        
+                        var send = "false";
+                        
+                        sessionStorage["send"] = "false";
+                        
+                        sessionStorage["formAjax"] = "";
+                        if (document.querySelector("form#"+ fId1) != null) {
+                          document.querySelector("form#"+ fId1).addEventListener("submit", function(e){
+                            
+                            if (sessionStorage["send"] == "false") {
+                              e.preventDefault();
+                                var data_text=document.querySelectorAll("form#"+ fId1 + " input[type=text]");
+                                var data_number=document.querySelectorAll("form#"+ fId1 + " input[type=number]");
+                                var data_date=document.querySelectorAll("form#"+ fId1 + " input[type=date]");
+                                var data_phone=document.querySelectorAll("form#"+ fId1 + " input[type=phone]");
+                                var data_email=document.querySelectorAll("form#"+ fId1 + " input[type=email]");
+                                var data_tel=document.querySelectorAll("form#"+ fId1 + " input[type=tel]");
+                                var data_radio=document.querySelectorAll("form#"+ fId1 + " input[type=radio]");
+                                var data_checkbox=document.querySelectorAll("form#"+ fId1 + " input[type=checkbox]");
+                                var data_select=document.querySelectorAll("form#"+ fId1 + " select");
+                                var data_textarea=document.querySelectorAll("form#"+ fId1 + " textarea");
+                                var data_time=document.querySelectorAll("form#"+ fId1 + " input[type=time]"); // edit --gufron--
+  
+                                a =wzp_serializer(document.querySelectorAll("form#"+ fId1 + " input[type=hidden]"));
+                                b = new URLSearchParams(a)
+                                b.delete("_wp_http_referer")
+                                b.delete("_cf_verify");
+                                b.delete("_cf_frm_id");
+                                b.delete("_cf_frm_ct");
+                                b.delete("_cf_frm_ct");
+                                b.delete("_cf_cr_pst");
+                                b.delete("_wpcf7");
+                                b.delete("_wpcf7_version");
+                                b.delete("_wpcf7_locale");
+                                b.delete("_wpcf7_unit_tag");
+                                b.delete("_wpcf7_container_post");
+                                b.delete("_wpcf7_posted_data_hash");
+                                b.delete("action");
+                                var data_hidden = b.toString();
+  
+                                var data="id=1&provider=Form by KIRIM.EMAIL&action=wzp_handler_submit_form&"+wzp_serializer(data_text)+"&"+wzp_serializer(data_number)+"&"+wzp_serializer(data_phone)+"&"+wzp_serializer(data_date)+"&"+wzp_serializer(data_email)+"&"+wzp_serializer(data_textarea)+"&"+wzp_serializer(data_tel)+"&"+wzp_serializer(data_radio)+"&"+wzp_serializer(data_select)+"&"+wzp_serializer(data_checkbox)+"&"+wzp_serializer(data_time)+"&"+data_hidden;
+                      
+                                var xhttp;
+                                xhttp=new XMLHttpRequest();
+                                xhttp.onreadystatechange = function(res) {
+  
+                                  if (this.readyState == XMLHttpRequest.DONE) {
+                                    console.log("Res Text",this.responseText);
+                                  }
+                                  if (this.readyState == 4 && this.status == 200) {
+                                    sessionStorage["send"] = "true";
+                                    sessionStorage["formAjax"] = "1"; 
+                                    
+                                  }
+                                };
+                      
+                                var url="/wp-admin/admin-ajax.php";
+                                xhttp.open("POST", url, true);
+                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                xhttp.send(data);
+                            }else{
+                                console.log("else");
+                                sessionStorage["formAjax"] = "";
+                            }
+                                return false;
+                          });
+                        } 
+                      }
+                  });
+                
+          
+        }catch(ex){
+          console.log('WZP Form Err', ex);
+        }
+        
+    </script>
+	<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+	<link rel='stylesheet' id='widget-image-box-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-image-box.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='e-animation-shrink-css'
+		href='/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-shrink.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-social-icons-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='e-apple-webkit-css'
+		href='/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-icon-list-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.32.2'
+		media='all' />
+	<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+	<script id="rocket-preload-links-js-extra">
+		var RocketPreloadLinksConfig = { "excludeUris": "\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/suksescpns.id", "onHoverDelay": "100", "rateThrottle": "3" };
+	</script>
+	<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+	<script id="rocket_lazyload_css-js-extra">
+		var rocket_lazyload_css_data = { "threshold": "300" };
+	</script>
+	<script id="rocket_lazyload_css-js-after">
+		!function o(n, c, a) { function u(t, e) { if (!c[t]) { if (!n[t]) { var r = "function" == typeof require && require; if (!e && r) return r(t, !0); if (s) return s(t, !0); throw (e = new Error("Cannot find module '" + t + "'")).code = "MODULE_NOT_FOUND", e } r = c[t] = { exports: {} }, n[t][0].call(r.exports, function (e) { return u(n[t][1][e] || e) }, r, r.exports, o, n, c, a) } return c[t].exports } for (var s = "function" == typeof require && require, e = 0; e < a.length; e++)u(a[e]); return u }({ 1: [function (e, t, r) { "use strict"; { const c = "undefined" == typeof rocket_pairs ? [] : rocket_pairs, a = (("undefined" == typeof rocket_excluded_pairs ? [] : rocket_excluded_pairs).map(t => { var e = t.selector; document.querySelectorAll(e).forEach(e => { e.setAttribute("data-rocket-lazy-bg-" + t.hash, "excluded") }) }), document.querySelector("#wpr-lazyload-bg-container")); var o = rocket_lazyload_css_data.threshold || 300; const u = new IntersectionObserver(e => { e.forEach(t => { t.isIntersecting && c.filter(e => t.target.matches(e.selector)).map(t => { var e; t && ((e = document.createElement("style")).textContent = t.style, a.insertAdjacentElement("afterend", e), t.elements.forEach(e => { u.unobserve(e), e.setAttribute("data-rocket-lazy-bg-" + t.hash, "loaded") })) }) }) }, { rootMargin: o + "px" }); function n() { 0 < (0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : []).length && c.forEach(t => { try { document.querySelectorAll(t.selector).forEach(e => { "loaded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && "excluded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && (u.observe(e), (t.elements ||= []).push(e)) }) } catch (e) { console.error(e) } }) } n(), function () { const r = window.MutationObserver; return function (e, t) { if (e && 1 === e.nodeType) return (t = new r(t)).observe(e, { attributes: !0, childList: !0, subtree: !0 }), t } }()(document.querySelector("body"), n) } }, {}] }, {}, [1]);
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=3.1.1"
+		id="hello-theme-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.2"
+		id="elementor-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.2"
+		id="elementor-frontend-modules-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"
+		data-rocket-defer defer></script>
+	<script id="elementor-frontend-js-extra">
+		var uael_particles_script = { "uael_particles_url": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/min-js\/uael-particles.min.js", "particles_url": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/lib\/particles\/particles.min.js", "snowflakes_image": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/snowflake.svg", "gift": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/gift.png", "tree": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/tree.png", "skull": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/skull.png", "ghost": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/ghost.png", "moon": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/moon.png", "bat": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/bat.png", "pumpkin": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/pumpkin.png" };
+	</script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.32.2","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"landing-pages":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true,"mega-menu":true},"urls":{"assets":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/suksescpns.id\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"2615091633"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal"},"post":{"id":4993,"title":"Tentang%20Kami%20-%20Sukses%20CPNS","excerpt":"","featuredImage":false}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.2"
+		id="elementor-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-after">window.addEventListener('DOMContentLoaded', function() {
+window.scope_array = [];
+								window.backend = 0;
+								jQuery.cachedScript = function( url, options ) {
+									// Allow user to set any option except for dataType, cache, and url.
+									options = jQuery.extend( options || {}, {
+										dataType: "script",
+										cache: true,
+										url: url
+									});
+									// Return the jqXHR object so we can chain callbacks.
+									return jQuery.ajax( options );
+								};
+							    jQuery( window ).on( "elementor/frontend/init", function() {
+									elementorFrontend.hooks.addAction( "frontend/element_ready/global", function( $scope, $ ){
+										if ( "undefined" == typeof $scope ) {
+												return;
+										}
+										if ( $scope.hasClass( "uael-particle-yes" ) ) {
+											window.scope_array.push( $scope );
+											$scope.find(".uael-particle-wrapper").addClass("js-is-enabled");
+										}else{
+											return;
+										}
+										if(elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0 ){
+											var uael_url = uael_particles_script.uael_particles_url;
+
+											jQuery.cachedScript( uael_url );
+											window.backend = 1;
+										}else if(elementorFrontend.isEditMode()){
+											var uael_url = uael_particles_script.uael_particles_url;
+											jQuery.cachedScript( uael_url ).done(function(){
+												var flag = true;
+											});
+										}
+									});
+								});
+								 jQuery( document ).on( "ready elementor/popup/show", () => {
+									if ( jQuery.find( ".uael-particle-yes" ).length < 1 ) {
+										return;
+									}
+									var uael_url = uael_particles_script.uael_particles_url;
+									jQuery.cachedScript = function( url, options ) {
+										// Allow user to set any option except for dataType, cache, and url.
+										options = jQuery.extend( options || {}, {
+											dataType: "script",
+											cache: true,
+											url: url
+										});
+										// Return the jqXHR object so we can chain callbacks.
+										return jQuery.ajax( options );
+									};
+									jQuery.cachedScript( uael_url );
+								});	
+});</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1"
+		id="smartmenus-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.19.2"
+		id="elementor-pro-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6"
+		id="wp-hooks-js"></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6"
+		id="wp-i18n-js"></script>
+	<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+	<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php","nonce":"1200cc19fd","urls":{"assets":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/suksescpns.id\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.19.2"
+		id="elementor-pro-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.19.2"
+		id="pro-preloaded-elements-handlers-js" data-rocket-defer defer></script>
+	<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
+			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+				var observer = new MutationObserver(function (mutations) {
+					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+						for (var i = 0; i < mutation.addedNodes.length; i++) {
+							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+							if (is_iframe) { iframe_count += 1 }
+						}
+					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+			}
+		}, !1)</script>
+	<script data-no-minify="1" async
+		src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+	<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
+
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
