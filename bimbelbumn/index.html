@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+
+<head>
+	<script src="/js/head-loader.js"></script>
+	<meta charset="UTF-8">
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>(() => { class RocketLazyLoadScripts { constructor() { this.v = "2.0.4", this.userEvents = ["keydown", "keyup", "mousedown", "mouseup", "mousemove", "mouseover", "mouseout", "touchmove", "touchstart", "touchend", "touchcancel", "wheel", "click", "dblclick", "input"], this.attributeEvents = ["onblur", "onclick", "oncontextmenu", "ondblclick", "onfocus", "onmousedown", "onmouseenter", "onmouseleave", "onmousemove", "onmouseout", "onmouseover", "onmouseup", "onmousewheel", "onscroll", "onsubmit"] } async t() { this.i(), this.o(), /iP(ad|hone)/.test(navigator.userAgent) && this.h(), this.u(), this.l(this), this.m(), this.k(this), this.p(this), this._(), await Promise.all([this.R(), this.L()]), this.lastBreath = Date.now(), this.S(this), this.P(), this.D(), this.O(), this.M(), await this.C(this.delayedScripts.normal), await this.C(this.delayedScripts.defer), await this.C(this.delayedScripts.async), await this.T(), await this.F(), await this.j(), await this.A(), window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this.everythingLoaded = !0, this.lastTouchEnd && await new Promise(t => setTimeout(t, 500 - Date.now() + this.lastTouchEnd)), this.I(), this.H(), this.U(), this.W() } i() { this.CSPIssue = sessionStorage.getItem("rocketCSPIssue"), document.addEventListener("securitypolicyviolation", t => { this.CSPIssue || "script-src-elem" !== t.violatedDirective || "data" !== t.blockedURI || (this.CSPIssue = !0, sessionStorage.setItem("rocketCSPIssue", !0)) }, { isRocket: !0 }) } o() { window.addEventListener("pageshow", t => { this.persisted = t.persisted, this.realWindowLoadedFired = !0 }, { isRocket: !0 }), window.addEventListener("pagehide", () => { this.onFirstUserAction = null }, { isRocket: !0 }) } h() { let t; function e(e) { t = e } window.addEventListener("touchstart", e, { isRocket: !0 }), window.addEventListener("touchend", function i(o) { o.changedTouches[0] && t.changedTouches[0] && Math.abs(o.changedTouches[0].pageX - t.changedTouches[0].pageX) < 10 && Math.abs(o.changedTouches[0].pageY - t.changedTouches[0].pageY) < 10 && o.timeStamp - t.timeStamp < 200 && (window.removeEventListener("touchstart", e, { isRocket: !0 }), window.removeEventListener("touchend", i, { isRocket: !0 }), "INPUT" === o.target.tagName && "text" === o.target.type || (o.target.dispatchEvent(new TouchEvent("touchend", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new MouseEvent("mouseover", { target: o.target, bubbles: !0 })), o.target.dispatchEvent(new PointerEvent("click", { target: o.target, bubbles: !0, cancelable: !0, detail: 1, clientX: o.changedTouches[0].clientX, clientY: o.changedTouches[0].clientY })), event.preventDefault())) }, { isRocket: !0 }) } q(t) { this.userActionTriggered || ("mousemove" !== t.type || this.firstMousemoveIgnored ? "keyup" === t.type || "mouseover" === t.type || "mouseout" === t.type || (this.userActionTriggered = !0, this.onFirstUserAction && this.onFirstUserAction()) : this.firstMousemoveIgnored = !0), "click" === t.type && t.preventDefault(), t.stopPropagation(), t.stopImmediatePropagation(), "touchstart" === this.lastEvent && "touchend" === t.type && (this.lastTouchEnd = Date.now()), "click" === t.type && (this.lastTouchEnd = 0), this.lastEvent = t.type, t.composedPath && t.composedPath()[0].getRootNode() instanceof ShadowRoot && (t.rocketTarget = t.composedPath()[0]), this.savedUserEvents.push(t) } u() { this.savedUserEvents = [], this.userEventHandler = this.q.bind(this), this.userEvents.forEach(t => window.addEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.addEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }) } U() { this.userEvents.forEach(t => window.removeEventListener(t, this.userEventHandler, { passive: !1, isRocket: !0 })), document.removeEventListener("visibilitychange", this.userEventHandler, { isRocket: !0 }), this.savedUserEvents.forEach(t => { (t.rocketTarget || t.target).dispatchEvent(new window[t.constructor.name](t.type, t)) }) } m() { const t = "return false", e = Array.from(this.attributeEvents, t => "data-rocket-" + t), i = "[" + this.attributeEvents.join("],[") + "]", o = "[data-rocket-" + this.attributeEvents.join("],[data-rocket-") + "]", s = (e, i, o) => { o && o !== t && (e.setAttribute("data-rocket-" + i, o), e["rocket" + i] = new Function("event", o), e.setAttribute(i, t)) }; new MutationObserver(t => { for (const n of t) "attributes" === n.type && (n.attributeName.startsWith("data-rocket-") || this.everythingLoaded ? n.attributeName.startsWith("data-rocket-") && this.everythingLoaded && this.N(n.target, n.attributeName.substring(12)) : s(n.target, n.attributeName, n.target.getAttribute(n.attributeName))), "childList" === n.type && n.addedNodes.forEach(t => { if (t.nodeType === Node.ELEMENT_NODE) if (this.everythingLoaded) for (const i of [t, ...t.querySelectorAll(o)]) for (const t of i.getAttributeNames()) e.includes(t) && this.N(i, t.substring(12)); else for (const e of [t, ...t.querySelectorAll(i)]) for (const t of e.getAttributeNames()) this.attributeEvents.includes(t) && s(e, t, e.getAttribute(t)) }) }).observe(document, { subtree: !0, childList: !0, attributeFilter: [...this.attributeEvents, ...e] }) } I() { this.attributeEvents.forEach(t => { document.querySelectorAll("[data-rocket-" + t + "]").forEach(e => { this.N(e, t) }) }) } N(t, e) { const i = t.getAttribute("data-rocket-" + e); i && (t.setAttribute(e, i), t.removeAttribute("data-rocket-" + e)) } k(t) { Object.defineProperty(HTMLElement.prototype, "onclick", { get() { return this.rocketonclick || null }, set(e) { this.rocketonclick = e, this.setAttribute(t.everythingLoaded ? "onclick" : "data-rocket-onclick", "this.rocketonclick(event)") } }) } S(t) { function e(e, i) { let o = e[i]; e[i] = null, Object.defineProperty(e, i, { get: () => o, set(s) { t.everythingLoaded ? o = s : e["rocket" + i] = o = s } }) } e(document, "onreadystatechange"), e(window, "onload"), e(window, "onpageshow"); try { Object.defineProperty(document, "readyState", { get: () => t.rocketReadyState, set(e) { t.rocketReadyState = e }, configurable: !0 }), document.readyState = "loading" } catch (t) { console.log("WPRocket DJE readyState conflict, bypassing") } } l(t) { this.originalAddEventListener = EventTarget.prototype.addEventListener, this.originalRemoveEventListener = EventTarget.prototype.removeEventListener, this.savedEventListeners = [], EventTarget.prototype.addEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalAddEventListener.call(this, e, i, o) : (t.savedEventListeners.push({ target: this, remove: !1, type: e, func: i, options: o }), "mouseenter" !== e && "mouseleave" !== e || t.originalAddEventListener.call(this, e, t.savedUserEvents.push, o)) }, EventTarget.prototype.removeEventListener = function (e, i, o) { o && o.isRocket || !t.B(e, this) && !t.userEvents.includes(e) || t.B(e, this) && !t.userActionTriggered || e.startsWith("rocket-") || t.everythingLoaded ? t.originalRemoveEventListener.call(this, e, i, o) : t.savedEventListeners.push({ target: this, remove: !0, type: e, func: i, options: o }) } } J(t, e) { this.savedEventListeners = this.savedEventListeners.filter(i => { let o = i.type, s = i.target || window; return e !== o || t !== s || (this.B(o, s) && (i.type = "rocket-" + o), this.$(i), !1) }) } H() { EventTarget.prototype.addEventListener = this.originalAddEventListener, EventTarget.prototype.removeEventListener = this.originalRemoveEventListener, this.savedEventListeners.forEach(t => this.$(t)) } $(t) { t.remove ? this.originalRemoveEventListener.call(t.target, t.type, t.func, t.options) : this.originalAddEventListener.call(t.target, t.type, t.func, t.options) } p(t) { let e; function i(e) { return t.everythingLoaded ? e : e.split(" ").map(t => "load" === t || t.startsWith("load.") ? "rocket-jquery-load" : t).join(" ") } function o(o) { function s(e) { const s = o.fn[e]; o.fn[e] = o.fn.init.prototype[e] = function () { return this[0] === window && t.userActionTriggered && ("string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = i(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach(t => { const e = arguments[0][t]; delete arguments[0][t], arguments[0][i(t)] = e })), s.apply(this, arguments), this } } if (o && o.fn && !t.allJQueries.includes(o)) { const e = { DOMContentLoaded: [], "rocket-DOMContentLoaded": [] }; for (const t in e) document.addEventListener(t, () => { e[t].forEach(t => t()) }, { isRocket: !0 }); o.fn.ready = o.fn.init.prototype.ready = function (i) { function s() { parseInt(o.fn.jquery) > 2 ? setTimeout(() => i.bind(document)(o)) : i.bind(document)(o) } return "function" == typeof i && (t.realDomReadyFired ? !t.userActionTriggered || t.fauxDomReadyFired ? s() : e["rocket-DOMContentLoaded"].push(s) : e.DOMContentLoaded.push(s)), o([]) }, s("on"), s("one"), s("off"), t.allJQueries.push(o) } e = o } t.allJQueries = [], o(window.jQuery), Object.defineProperty(window, "jQuery", { get: () => e, set(t) { o(t) } }) } P() { const t = new Map; document.write = document.writeln = function (e) { const i = document.currentScript, o = document.createRange(), s = i.parentElement; let n = t.get(i); void 0 === n && (n = i.nextSibling, t.set(i, n)); const c = document.createDocumentFragment(); o.setStart(c, 0), c.appendChild(o.createContextualFragment(e)), s.insertBefore(c, n) } } async R() { return new Promise(t => { this.userActionTriggered ? t() : this.onFirstUserAction = t }) } async L() { return new Promise(t => { document.addEventListener("DOMContentLoaded", () => { this.realDomReadyFired = !0, t() }, { isRocket: !0 }) }) } async j() { return this.realWindowLoadedFired ? Promise.resolve() : new Promise(t => { window.addEventListener("load", t, { isRocket: !0 }) }) } M() { this.pendingScripts = []; this.scriptsMutationObserver = new MutationObserver(t => { for (const e of t) e.addedNodes.forEach(t => { "SCRIPT" !== t.tagName || t.noModule || t.isWPRocket || this.pendingScripts.push({ script: t, promise: new Promise(e => { const i = () => { const i = this.pendingScripts.findIndex(e => e.script === t); i >= 0 && this.pendingScripts.splice(i, 1), e() }; t.addEventListener("load", i, { isRocket: !0 }), t.addEventListener("error", i, { isRocket: !0 }), setTimeout(i, 1e3) }) }) }) }), this.scriptsMutationObserver.observe(document, { childList: !0, subtree: !0 }) } async F() { await this.X(), this.pendingScripts.length ? (await this.pendingScripts[0].promise, await this.F()) : this.scriptsMutationObserver.disconnect() } D() { this.delayedScripts = { normal: [], async: [], defer: [] }, document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t => { t.hasAttribute("data-rocket-src") ? t.hasAttribute("async") && !1 !== t.async ? this.delayedScripts.async.push(t) : t.hasAttribute("defer") && !1 !== t.defer || "module" === t.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(t) : this.delayedScripts.normal.push(t) : this.delayedScripts.normal.push(t) }) } async _() { await this.L(); let t = []; document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e => { let i = e.getAttribute("data-rocket-src"); if (i && !i.startsWith("data:")) { i.startsWith("//") && (i = location.protocol + i); try { const o = new URL(i).origin; o !== location.origin && t.push({ src: o, crossOrigin: e.crossOrigin || "module" === e.getAttribute("data-rocket-type") }) } catch (t) { } } }), t = [...new Map(t.map(t => [JSON.stringify(t), t])).values()], this.Y(t, "preconnect") } async G(t) { if (await this.K(), !0 !== t.noModule || !("noModule" in HTMLScriptElement.prototype)) return new Promise(e => { let i; function o() { (i || t).setAttribute("data-rocket-status", "executed"), e() } try { if (navigator.userAgent.includes("Firefox/") || "" === navigator.vendor || this.CSPIssue) i = document.createElement("script"), [...t.attributes].forEach(t => { let e = t.nodeName; "type" !== e && ("data-rocket-type" === e && (e = "type"), "data-rocket-src" === e && (e = "src"), i.setAttribute(e, t.nodeValue)) }), t.text && (i.text = t.text), t.nonce && (i.nonce = t.nonce), i.hasAttribute("src") ? (i.addEventListener("load", o, { isRocket: !0 }), i.addEventListener("error", () => { i.setAttribute("data-rocket-status", "failed-network"), e() }, { isRocket: !0 }), setTimeout(() => { i.isConnected || e() }, 1)) : (i.text = t.text, o()), i.isWPRocket = !0, t.parentNode.replaceChild(i, t); else { const i = t.getAttribute("data-rocket-type"), s = t.getAttribute("data-rocket-src"); i ? (t.type = i, t.removeAttribute("data-rocket-type")) : t.removeAttribute("type"), t.addEventListener("load", o, { isRocket: !0 }), t.addEventListener("error", i => { this.CSPIssue && i.target.src.startsWith("data:") ? (console.log("WPRocket: CSP fallback activated"), t.removeAttribute("src"), this.G(t).then(e)) : (t.setAttribute("data-rocket-status", "failed-network"), e()) }, { isRocket: !0 }), s ? (t.fetchPriority = "high", t.removeAttribute("data-rocket-src"), t.src = s) : t.src = "data:text/javascript;base64," + window.btoa(unescape(encodeURIComponent(t.text))) } } catch (i) { t.setAttribute("data-rocket-status", "failed-transform"), e() } }); t.setAttribute("data-rocket-status", "skipped") } async C(t) { const e = t.shift(); return e ? (e.isConnected && await this.G(e), this.C(t)) : Promise.resolve() } O() { this.Y([...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async], "preload") } Y(t, e) { this.trash = this.trash || []; let i = !0; var o = document.createDocumentFragment(); t.forEach(t => { const s = t.getAttribute && t.getAttribute("data-rocket-src") || t.src; if (s && !s.startsWith("data:")) { const n = document.createElement("link"); n.href = s, n.rel = e, "preconnect" !== e && (n.as = "script", n.fetchPriority = i ? "high" : "low"), t.getAttribute && "module" === t.getAttribute("data-rocket-type") && (n.crossOrigin = !0), t.crossOrigin && (n.crossOrigin = t.crossOrigin), t.integrity && (n.integrity = t.integrity), t.nonce && (n.nonce = t.nonce), o.appendChild(n), this.trash.push(n), i = !1 } }), document.head.appendChild(o) } W() { this.trash.forEach(t => t.remove()) } async T() { try { document.readyState = "interactive" } catch (t) { } this.fauxDomReadyFired = !0; try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(document, "DOMContentLoaded"), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this.K(), this.J(window, "DOMContentLoaded"), window.dispatchEvent(new Event("rocket-DOMContentLoaded")) } catch (t) { console.error(t) } } async A() { try { document.readyState = "complete" } catch (t) { } try { await this.K(), this.J(document, "readystatechange"), document.dispatchEvent(new Event("rocket-readystatechange")), await this.K(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.K(), this.J(window, "load"), window.dispatchEvent(new Event("rocket-load")), await this.K(), window.rocketonload && window.rocketonload(), await this.K(), this.allJQueries.forEach(t => t(window).trigger("rocket-jquery-load")), await this.K(), this.J(window, "pageshow"); const t = new Event("rocket-pageshow"); t.persisted = this.persisted, window.dispatchEvent(t), await this.K(), window.rocketonpageshow && window.rocketonpageshow({ persisted: this.persisted }) } catch (t) { console.error(t) } } async K() { Date.now() - this.lastBreath > 45 && (await this.X(), this.lastBreath = Date.now()) } async X() { return document.hidden ? new Promise(t => setTimeout(t)) : new Promise(t => requestAnimationFrame(t)) } B(t, e) { return e === document && "readystatechange" === t || (e === document && "DOMContentLoaded" === t || (e === window && "DOMContentLoaded" === t || (e === window && "load" === t || e === window && "pageshow" === t))) } static run() { (new RocketLazyLoadScripts).t() } } RocketLazyLoadScripts.run() })();</script>
+
+	
+
+	<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+	<title>Bimbel BUMN - Sukses CPNS</title>
+	
+	<link rel="preload" data-rocket-preload as="image"
+		href="/wp-content/uploads/2024/03/footer-image-768x768.webp"
+		imagesrcset="/wp-content/uploads/2024/03/footer-image-768x768.webp 768w, /wp-content/uploads/2024/03/footer-image-768x768.webp 300w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1024w, /wp-content/uploads/2024/03/footer-image-768x768.webp 150w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1536w, /wp-content/uploads/2024/03/footer-image-768x768.webp 600w, /wp-content/uploads/2024/03/footer-image-768x768.webp 100w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1706w"
+		imagesizes="(max-width: 768px) 100vw, 768px" fetchpriority="high">
+	<meta name="description"
+		content="Program persiapan seleksi BUMN 2025 dengan model pembelajaran intensif personal privat (1 on 1), satu tutor untuk satu peserta.Layanan: Assesment test," />
+	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+	<link rel="canonical" href="/bimbelbumn" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Bimbel BUMN - Sukses CPNS" />
+	<meta property="og:description"
+		content="Program persiapan seleksi BUMN 2025 dengan model pembelajaran intensif personal privat (1 on 1), satu tutor untuk satu peserta.Layanan: Assesment test," />
+	<meta property="og:url" content="/bimbelbumn" />
+	<meta property="og:site_name" content="Sukses CPNS" />
+	<meta property="og:updated_time" content="2025-01-20T13:19:57+07:00" />
+	<meta property="og:image"
+		content="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp" />
+	<meta property="og:image:secure_url"
+		content="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp" />
+	<meta property="og:image:alt" content="Bimbel BUMN" />
+	<meta property="article:published_time" content="2023-02-14T14:05:36+07:00" />
+	<meta property="article:modified_time" content="2025-01-20T13:19:57+07:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Bimbel BUMN - Sukses CPNS" />
+	<meta name="twitter:description"
+		content="Program persiapan seleksi BUMN 2025 dengan model pembelajaran intensif personal privat (1 on 1), satu tutor untuk satu peserta.Layanan: Assesment test," />
+	<meta name="twitter:image"
+		content="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp" />
+	<meta name="twitter:label1" content="Time to read" />
+	<meta name="twitter:data1" content="3 minutes" />
+	<script type="application/ld+json"
+		class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"/#organization","name":"Sukses CPNS","logo":{"@type":"ImageObject","@id":"/#logo","url":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-scaled.webp","contentUrl":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-scaled.webp","caption":"Sukses CPNS","inLanguage":"en-US","width":"2560","height":"469"}},{"@type":"WebSite","@id":"/#website","url":"/","name":"Sukses CPNS","publisher":{"@id":"/#organization"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp","url":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"/bimbelbumn#webpage","url":"/bimbelbumn","name":"Bimbel BUMN - Sukses CPNS","datePublished":"2023-02-14T14:05:36+07:00","dateModified":"2025-01-20T13:19:57+07:00","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp"},"inLanguage":"en-US"},{"@type":"Person","@id":"/author/sukses-cpns/","name":"mas bam","url":"/author/sukses-cpns/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/4dde89f955e52ee6c088ab33fa89134b4f065e05497fe99ae24235d9c397c63b?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/4dde89f955e52ee6c088ab33fa89134b4f065e05497fe99ae24235d9c397c63b?s=96&amp;d=mm&amp;r=g","caption":"mas bam","inLanguage":"en-US"},"sameAs":["/"],"worksFor":{"@id":"/#organization"}},{"headline":"Bimbel BUMN - Sukses CPNS","description":"Program persiapan seleksi BUMN 2025 dengan model pembelajaran intensif personal privat (1 on 1), satu tutor untuk satu peserta.Layanan: Assesment test,","datePublished":"2023-02-14T14:05:36+07:00","dateModified":"2025-01-20T13:19:57+07:00","image":{"@id":"/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp"},"author":{"@id":"/author/sukses-cpns/","name":"mas bam"},"@type":"Article","name":"Bimbel BUMN - Sukses CPNS","@id":"/bimbelbumn#schema-43886","isPartOf":{"@id":"/bimbelbumn#webpage"},"publisher":{"@id":"/#organization"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/bimbelbumn#webpage"}}]}</script>
+	<!-- /Rank Math WordPress SEO plugin -->
+
+	
+	
+	
+	
+	
+	<link rel='stylesheet' id='e-animation-shrink-css'
+		href='/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-shrink.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-counter-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-counter.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-icon-list-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-menu-anchor-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-menu-anchor.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-divider-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-image-box-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-image-box.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='e-shapes-css'
+		href='/wp-content/plugins/elementor/assets/css/conditionals/shapes.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='widget-spacer-css'
+		href='/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=3.32.2'
+		media='all' />
+	<link rel='stylesheet' id='elementor-post-551-css'
+		href='/wp-content/cache/background-css/1/suksescpns.id/wp-content/uploads/elementor/css/post-551.css?ver=1761232014&wpr_t=1762571022'
+		media='all' />
+	
+	<link data-minify="1" rel='stylesheet' id='elementor-gf-local-montserrat-css'
+		href='/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/montserrat.css?ver=1761231803'
+		media='all' />
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"
+		data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+		id="jquery-migrate-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/underscore.min.js?ver=1.13.7" id="underscore-js"
+		data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" data-rocket-src="/wp-includes/js/backbone.min.js?ver=1.6.0"
+		id="backbone-js" data-rocket-defer defer></script>
+	<script id="a3-pvc-backbone-js-extra">
+		var pvc_vars = { "rest_api_url": "https:\/\/suksescpns.id\/wp-json\/pvc\/v1", "ajax_url": "https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php", "security": "f90d1bd745", "ajax_load_type": "rest_api" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/page-views-count/assets/js/pvc.backbone.min.js?ver=2.8.7"
+		id="a3-pvc-backbone-js" data-rocket-defer defer></script>
+
+	<!-- Google tag (gtag.js) snippet added by Site Kit -->
+	<!-- Google Analytics snippet added by Site Kit -->
+	<script type="rocketlazyloadscript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-1E82CVDCML"
+		id="google_gtagjs-js" async></script>
+	<script type="rocketlazyloadscript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["suksescpns.id"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-1E82CVDCML");
+</script>
+	
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MMD5RZP');</script>
+	<!-- End Google Tag Manager -->
+	<!-- /end HFCM by 99 Robots -->
+
+	<script type="rocketlazyloadscript">
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:3838040,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	<meta name="generator"
+		content="Elementor 3.32.2; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+	
+	<style id="wpr-lazyload-bg-container"></style>
+	<style id="wpr-lazyload-bg-exclusion"></style>
+	<noscript>
+		<style id="wpr-lazyload-bg-nostyle">
+			.elementor-551 .elementor-element.elementor-element-91e4cf4:not(.elementor-motion-effects-element-type-background),
+			.elementor-551 .elementor-element.elementor-element-91e4cf4>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+				--wpr-bg-608ccddd-a6df-4779-80b4-e04515baa6c9: url('/wp-content/uploads/2024/03/background-city.webp');
+			}
+
+			.iti__flag {
+				--wpr-bg-6dc29819-f22e-4333-8dda-cd6eeee3524a: url('/wp-content/plugins/watzap/assets/vendor/intltel/img/flags.png');
+			}
+
+			.iti__flag {
+				--wpr-bg-f5de9af8-dbeb-4013-ab2c-219420412bc8: url('/wp-content/plugins/watzap/assets/vendor/intltel/img/flags@2x.png');
+			}
+
+			.iti__flag {
+				--wpr-bg-b2557a42-3b22-4773-87b6-70464e786ff1: url('/wp-content/plugins/watzap/assets/vendor/intltel/img/flags.png');
+			}
+		</style>
+	</noscript>
+	<script
+		type="application/javascript">const rocket_pairs = [{ "selector": ".elementor-551 .elementor-element.elementor-element-91e4cf4:not(.elementor-motion-effects-element-type-background), .elementor-551 .elementor-element.elementor-element-91e4cf4 > .elementor-motion-effects-container > .elementor-motion-effects-layer", "style": ".elementor-551 .elementor-element.elementor-element-91e4cf4:not(.elementor-motion-effects-element-type-background), .elementor-551 .elementor-element.elementor-element-91e4cf4 > .elementor-motion-effects-container > .elementor-motion-effects-layer{--wpr-bg-608ccddd-a6df-4779-80b4-e04515baa6c9: url('https:\/\/suksescpns.id\/wp-content\/uploads\/2024\/03\/background-city.webp');}", "hash": "608ccddd-a6df-4779-80b4-e04515baa6c9", "url": "https:\/\/suksescpns.id\/wp-content\/uploads\/2024\/03\/background-city.webp" }, { "selector": ".iti__flag", "style": ".iti__flag{--wpr-bg-6dc29819-f22e-4333-8dda-cd6eeee3524a: url('https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags.png');}", "hash": "6dc29819-f22e-4333-8dda-cd6eeee3524a", "url": "https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags.png" }, { "selector": ".iti__flag", "style": ".iti__flag{--wpr-bg-f5de9af8-dbeb-4013-ab2c-219420412bc8: url('https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags@2x.png');}", "hash": "f5de9af8-dbeb-4013-ab2c-219420412bc8", "url": "https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags@2x.png" }, { "selector": ".iti__flag", "style": ".iti__flag{--wpr-bg-b2557a42-3b22-4773-87b6-70464e786ff1: url('https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags.png');}", "hash": "b2557a42-3b22-4773-87b6-70464e786ff1", "url": "https:\/\/suksescpns.id\/wp-content\/plugins\/watzap\/assets\/vendor\/intltel\/img\/flags.png" }]; const rocket_excluded_pairs = [];</script>
+	<meta name="generator" content="WP Rocket 3.19.4"
+		data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_minify_css wpr_preload_links wpr_desktop" />
+</head>
+
+<body
+	class="wp-singular page-template page-template-elementor_canvas page page-id-551 wp-custom-logo wp-theme-hello-elementor elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-551">
+	<div data-elementor-type="wp-page" data-elementor-id="551" class="elementor elementor-551"
+		data-elementor-post-type="page">
+		<div class="elementor-element elementor-element-91e4cf4 e-con-full e-flex e-con e-parent" data-id="91e4cf4"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-element elementor-element-6fd1bd0 e-con-full e-flex e-con e-child" data-id="6fd1bd0"
+				data-element_type="container">
+				<div class="elementor-element elementor-element-3eada73 elementor-widget__width-initial elementor-widget elementor-widget-image"
+					data-id="3eada73" data-element_type="widget" data-widget_type="image.default">
+					<div class="elementor-widget-container">
+						<img fetchpriority="high" decoding="async" width="768" height="141"
+							src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20141'%3E%3C/svg%3E"
+							class="attachment-medium_large size-medium_large wp-image-2175" alt="logo bimbel cpns"
+							data-lazy-srcset="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 768w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 300w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 1024w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 1536w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 2048w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 600w"
+							data-lazy-sizes="(max-width: 768px) 100vw, 768px"
+							data-lazy-src="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp" /><noscript><img
+								fetchpriority="high" decoding="async" width="768" height="141"
+								src="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp"
+								class="attachment-medium_large size-medium_large wp-image-2175" alt="logo bimbel cpns"
+								srcset="/wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 768w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 300w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 1024w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 1536w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 2048w, /wp-content/uploads/2023/08/logo-sukses-cpns-border-white-64d492b65798a-768x141.webp 600w"
+								sizes="(max-width: 768px) 100vw, 768px" /></noscript>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-7043b51 e-con-full e-flex e-con e-child" data-id="7043b51"
+				data-element_type="container">
+				<div class="elementor-element elementor-element-2bdcf87 elementor-widget elementor-widget-heading"
+					data-id="2bdcf87" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Program Persiapan <br><span>Lulus
+								BUMN 2025</span> <br>Dengan Layanan Terbaik &amp; Terlengkap</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-80481e7 elementor-widget elementor-widget-text-editor"
+					data-id="80481e7" data-element_type="widget" data-widget_type="text-editor.default">
+					<div class="elementor-widget-container">
+						<p>Program persiapan seleksi BUMN 2025 dengan model pembelajaran intensif personal privat (1 on
+							1), satu tutor untuk satu peserta.<br /><strong>Layanan</strong>: Assesment test, drilling
+							soal, report belajar, try out, personal coaching, garansi ganti guru, dll.</p>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-3347075 elementor-align-left elementor-mobile-align-center elementor-tablet-align-center elementor-widget__width-inherit elementor-widget elementor-widget-button"
+					data-id="3347075" data-element_type="widget" data-widget_type="button.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-button-wrapper">
+							<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+								href="https://mauorder.online/cta-konsultasi-bumn" target="_blank" rel="noopener">
+								<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+											viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+											</path>
+										</svg> </span>
+									<span class="elementor-button-text">Konsultasi Sekarang</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-ab463b6 e-con-full e-flex e-con e-child" data-id="ab463b6"
+				data-element_type="container">
+				<div class="elementor-element elementor-element-165bcd8 elementor-widget elementor-widget-image"
+					data-id="165bcd8" data-element_type="widget" data-widget_type="image.default">
+					<div class="elementor-widget-container">
+						<img decoding="async" width="768" height="768"
+							src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20768'%3E%3C/svg%3E"
+							class="attachment-medium_large size-medium_large wp-image-5086" alt=""
+							data-lazy-srcset="/wp-content/uploads/2024/03/hero-image-bumn.webp 768w, /wp-content/uploads/2024/03/hero-image-bumn.webp 300w, /wp-content/uploads/2024/03/hero-image-bumn.webp 1024w, /wp-content/uploads/2024/03/hero-image-bumn.webp 150w, /wp-content/uploads/2024/03/hero-image-bumn.webp 600w, /wp-content/uploads/2024/03/hero-image-bumn.webp 100w, /wp-content/uploads/2024/03/hero-image-bumn.webp 1080w"
+							data-lazy-sizes="(max-width: 768px) 100vw, 768px"
+							data-lazy-src="/wp-content/uploads/2024/03/hero-image-bumn.webp" /><noscript><img
+								decoding="async" width="768" height="768"
+								src="/wp-content/uploads/2024/03/hero-image-bumn.webp"
+								class="attachment-medium_large size-medium_large wp-image-5086" alt=""
+								srcset="/wp-content/uploads/2024/03/hero-image-bumn.webp 768w, /wp-content/uploads/2024/03/hero-image-bumn.webp 300w, /wp-content/uploads/2024/03/hero-image-bumn.webp 1024w, /wp-content/uploads/2024/03/hero-image-bumn.webp 150w, /wp-content/uploads/2024/03/hero-image-bumn.webp 600w, /wp-content/uploads/2024/03/hero-image-bumn.webp 100w, /wp-content/uploads/2024/03/hero-image-bumn.webp 1080w"
+								sizes="(max-width: 768px) 100vw, 768px" /></noscript>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-9238774 e-flex e-con-boxed e-con e-parent" data-id="9238774"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-b8cddee e-con-full e-flex e-con e-child"
+					data-id="b8cddee" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-78447b3 elementor-widget-mobile__width-initial elementor-widget elementor-widget-counter"
+						data-id="78447b3" data-element_type="widget" data-widget_type="counter.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-counter">
+								<div class="elementor-counter-title">Jumlah Alumni</div>
+								<div class="elementor-counter-number-wrapper">
+									<span class="elementor-counter-number-prefix"></span>
+									<span class="elementor-counter-number" data-duration="2000" data-to-value="835"
+										data-from-value="0" data-delimiter=",">0</span>
+									<span class="elementor-counter-number-suffix">+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-ea37f05 elementor-widget-mobile__width-initial elementor-widget elementor-widget-counter"
+						data-id="ea37f05" data-element_type="widget" data-widget_type="counter.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-counter">
+								<div class="elementor-counter-title">Tutor Profesional</div>
+								<div class="elementor-counter-number-wrapper">
+									<span class="elementor-counter-number-prefix"></span>
+									<span class="elementor-counter-number" data-duration="2000" data-to-value="581"
+										data-from-value="0" data-delimiter=",">0</span>
+									<span class="elementor-counter-number-suffix">+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-d7f4128 elementor-widget-mobile__width-initial elementor-widget elementor-widget-counter"
+						data-id="d7f4128" data-element_type="widget" data-widget_type="counter.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-counter">
+								<div class="elementor-counter-title">Jumlah Soal</div>
+								<div class="elementor-counter-number-wrapper">
+									<span class="elementor-counter-number-prefix"></span>
+									<span class="elementor-counter-number" data-duration="2000" data-to-value="1.2"
+										data-from-value="0" data-delimiter=",">0</span>
+									<span class="elementor-counter-number-suffix">K+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-c10bd9f elementor-widget-mobile__width-initial elementor-widget elementor-widget-counter"
+						data-id="c10bd9f" data-element_type="widget" data-widget_type="counter.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-counter">
+								<div class="elementor-counter-title">Provinsi Dilayani</div>
+								<div class="elementor-counter-number-wrapper">
+									<span class="elementor-counter-number-prefix"></span>
+									<span class="elementor-counter-number" data-duration="2000" data-to-value="38"
+										data-from-value="0" data-delimiter=",">0</span>
+									<span class="elementor-counter-number-suffix"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-0e7eec6 e-flex e-con-boxed e-con e-parent" data-id="0e7eec6"
+			data-element_type="container">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-eab7e44 e-con-full e-flex e-con e-child"
+					data-id="eab7e44" data-element_type="container">
+					<div class="elementor-element elementor-element-a8e9ae9 elementor-widget elementor-widget-image"
+						data-id="a8e9ae9" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<img decoding="async" width="407" height="407"
+								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20407%20407'%3E%3C/svg%3E"
+								class="attachment-medium_large size-medium_large wp-image-4856" alt="bimbel cpns"
+								data-lazy-srcset="/wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 407w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 300w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 150w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 100w"
+								data-lazy-sizes="(max-width: 407px) 100vw, 407px"
+								data-lazy-src="/wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp" /><noscript><img
+									decoding="async" width="407" height="407"
+									src="/wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp"
+									class="attachment-medium_large size-medium_large wp-image-4856" alt="bimbel cpns"
+									srcset="/wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 407w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 300w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 150w, /wp-content/uploads/2024/03/siswa-bingung-65c237afca4c8.webp 100w"
+									sizes="(max-width: 407px) 100vw, 407px" /></noscript>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-6a317c5 e-con-full e-flex e-con e-child"
+					data-id="6a317c5" data-element_type="container">
+					<div class="elementor-element elementor-element-a22bb0c elementor-widget__width-inherit elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+						data-id="a22bb0c" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h1 class="elementor-heading-title elementor-size-default">Persaingan Semakin Ketat Untuk
+								Lolos BUMN</h1>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-7fa3a76 elementor-widget-tablet__width-initial elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+						data-id="7fa3a76" data-element_type="widget" data-widget_type="icon-list.default">
+						<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-times"
+											viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Kurangnya pengetahuan standar seleksi
+										BUMN</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-times"
+											viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Persaingan sanget ketat</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-times"
+											viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Kuota pendaftaran terbatas</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-times"
+											viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Persiapan kurang matang</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-times"
+											viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Bingung mau mulai belajar dari mana?</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-ebca5c6 elementor-align-left elementor-mobile-align-center elementor-widget__width-inherit elementor-tablet-align-left elementor-widget elementor-widget-button"
+						data-id="ebca5c6" data-element_type="widget" data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+									href="https://nanya.online/konsultasi-pppk-cpns" target="_blank" rel="noopener">
+									<span class="elementor-button-content-wrapper">
+										<span class="elementor-button-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+												viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+												</path>
+											</svg> </span>
+										<span class="elementor-button-text">Konsultasi Sekarang</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-4db3301 e-flex e-con-boxed e-con e-parent" data-id="4db3301"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-837394e e-con-full e-flex e-con e-child"
+					data-id="837394e" data-element_type="container">
+					<div class="elementor-element elementor-element-150a97b elementor-widget__width-inherit elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+						data-id="150a97b" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h1 class="elementor-heading-title elementor-size-default">Pusat Pendampingan Belajar BUMN
+								Terbaik di Indonesia </h1>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-bd996e5 elementor-widget elementor-widget-text-editor"
+						data-id="bd996e5" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p><strong>Sukses CPNS </strong>adalah pusat lembaga pelatihan dan pedidikan persiapan
+								Seleksi BUMN terbaik di Indonesia.</p>
+							<p>Kami menyelenggarakan program belajar dengan sistem (1 on 1) pertama satu-satunya di
+								Indonesia dengan presentasi kelulusan 90%</p>
+							<p><strong>Program Sukses BUMN:</strong><br />Personal Privat (1 tutor 1 siswa)</p>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-ff99c9f elementor-align-left elementor-mobile-align-center elementor-widget__width-inherit elementor-tablet-align-left elementor-widget elementor-widget-button"
+						data-id="ff99c9f" data-element_type="widget" data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+									href="https://nanya.online/konsultasi-pppk-cpns" target="_blank" rel="noopener">
+									<span class="elementor-button-content-wrapper">
+										<span class="elementor-button-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+												viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+												</path>
+											</svg> </span>
+										<span class="elementor-button-text">Konsultasi Sekarang</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-48e893c e-con-full e-flex e-con e-child"
+					data-id="48e893c" data-element_type="container">
+					<div class="elementor-element elementor-element-d0bf824 elementor-widget elementor-widget-image"
+						data-id="d0bf824" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<img decoding="async" width="768" height="768"
+								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20768'%3E%3C/svg%3E"
+								class="attachment-medium_large size-medium_large wp-image-5102" alt=""
+								data-lazy-srcset="/wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 768w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 300w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 1024w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 150w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 600w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 100w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 1080w"
+								data-lazy-sizes="(max-width: 768px) 100vw, 768px"
+								data-lazy-src="/wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp" /><noscript><img
+									decoding="async" width="768" height="768"
+									src="/wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp"
+									class="attachment-medium_large size-medium_large wp-image-5102" alt=""
+									srcset="/wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 768w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 300w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 1024w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 150w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 600w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 100w, /wp-content/uploads/2024/03/01-asset-web-sukses-cpns-revisi.webp 1080w"
+									sizes="(max-width: 768px) 100vw, 768px" /></noscript>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-0c38d66 e-flex e-con-boxed e-con e-parent" data-id="0c38d66"
+			data-element_type="container"
+			data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;opacity-tilt&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 131.1" preserveAspectRatio="none">
+						<path class="elementor-shape-fill" d="M0 0L2600 0 2600 69.1 0 0z" />
+						<path class="elementor-shape-fill" style="opacity:0.5" d="M0 0L2600 0 2600 69.1 0 69.1z" />
+						<path class="elementor-shape-fill" style="opacity:0.25" d="M2600 0L0 0 0 130.1 2600 69.1z" />
+					</svg>
+				</div>
+				<div class="elementor-element elementor-element-bcbe2e0 elementor-widget elementor-widget-menu-anchor"
+					data-id="bcbe2e0" data-element_type="widget" data-widget_type="menu-anchor.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-menu-anchor" id="keunggulan"></div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-80cd926 elementor-widget-divider--view-line_icon elementor-view-default elementor-widget-divider--element-align-center elementor-widget elementor-widget-divider"
+					data-id="80cd926" data-element_type="widget" data-widget_type="divider.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-divider">
+							<span class="elementor-divider-separator">
+								<div class="elementor-icon elementor-divider__element">
+									<svg aria-hidden="true" class="e-font-icon-svg e-fas-medal" viewBox="0 0 512 512"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M223.75 130.75L154.62 15.54A31.997 31.997 0 0 0 127.18 0H16.03C3.08 0-4.5 14.57 2.92 25.18l111.27 158.96c29.72-27.77 67.52-46.83 109.56-53.39zM495.97 0H384.82c-11.24 0-21.66 5.9-27.44 15.54l-69.13 115.21c42.04 6.56 79.84 25.62 109.56 53.38L509.08 25.18C516.5 14.57 508.92 0 495.97 0zM256 160c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm92.52 157.26l-37.93 36.96 8.97 52.22c1.6 9.36-8.26 16.51-16.65 12.09L256 393.88l-46.9 24.65c-8.4 4.45-18.25-2.74-16.65-12.09l8.97-52.22-37.93-36.96c-6.82-6.64-3.05-18.23 6.35-19.59l52.43-7.64 23.43-47.52c2.11-4.28 6.19-6.39 10.28-6.39 4.11 0 8.22 2.14 10.33 6.39l23.43 47.52 52.43 7.64c9.4 1.36 13.17 12.95 6.35 19.59z">
+										</path>
+									</svg>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-594de2c elementor-widget__width-inherit elementor-widget-mobile__width-inherit elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading"
+					data-id="594de2c" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Keunggulan Private di Sukses CPNS
+						</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-37ec0dd elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="37ec0dd" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-4509" alt="bimbel cpns"
+									data-lazy-srcset="/wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 150w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 300w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 100w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-4509" alt="bimbel cpns"
+										srcset="/wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 150w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 300w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 100w, /wp-content/uploads/2024/02/risize-online-class-65bbb39a4b918-150x150.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">Sistem Belajar Eksklusif</h3>
+								<p class="elementor-image-box-description">Seluruh program yang kami selenggarakan
+									selalu memiliki keunggulan ekslusif yang akan menjadikan peserta BUMN nyaman dan
+									puas.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-69c15a0 elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="69c15a0" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-4512" alt="bimbel cpns"
+									data-lazy-srcset="/wp-content/uploads/2024/02/Soal-resize-150x150.webp 150w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 300w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 100w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2024/02/Soal-resize-150x150.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2024/02/Soal-resize-150x150.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-4512" alt="bimbel cpns"
+										srcset="/wp-content/uploads/2024/02/Soal-resize-150x150.webp 150w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 300w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 100w, /wp-content/uploads/2024/02/Soal-resize-150x150.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">Soal Asli (FR) Ujian BUMN</h3>
+								<p class="elementor-image-box-description">Latihan soal update sesuai dengan FR ujian
+									BUMN, Informasi mengenai materi TKD, TKB, Inggris, dan Akhlak.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-b986b7c elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="b986b7c" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-4604" alt="bimbel cpns"
+									data-lazy-srcset="/wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 150w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 300w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 100w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-4604" alt="bimbel cpns"
+										srcset="/wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 150w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 300w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 100w, /wp-content/uploads/2024/03/driling-soal-resize-65cedc6754786.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">Sistem Evaluasi Mingguan</h3>
+								<p class="elementor-image-box-description">Kamu akan mengerjakan mini try out BUMN TKD,
+									TKB, Inggris, Akhlak, dan MCU.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-666a2d6 elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="666a2d6" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-4603" alt="bimbel cpns"
+									data-lazy-srcset="/wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 150w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 300w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 100w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-4603" alt="bimbel cpns"
+										srcset="/wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 150w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 300w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 100w, /wp-content/uploads/2024/03/ebook-resize-65cedc6755801.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">EduLine-Online Learning Platform</h3>
+								<p class="elementor-image-box-description">Kamu dapat mengakses ribuan soal yang
+									tersedia kapanpun dan dimanapun melalui platform e-learning. Dan laporan
+									pembelajaran dan analisis try out secara real time.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-ea35446 elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="ea35446" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-4511" alt="bimbel cpns"
+									data-lazy-srcset="/wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 150w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 300w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 100w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="/wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="/wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-4511" alt="bimbel cpns"
+										srcset="/wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 150w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 300w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 100w, /wp-content/uploads/2024/02/resize-coach-65bb6863b2985.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">Coach &amp; Tutor Profesional dan Kompeten</h3>
+								<p class="elementor-image-box-description">Kamu akan didampingi oleh Personal Coach yang
+									profesional dan kompeten dibidangnya untuk memberikan layanan Coaching melalui
+									webinar.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-689120b elementor-position-right elementor-position-top elementor-position-top elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+					data-id="689120b" data-element_type="widget" data-widget_type="image-box.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-image-box-wrapper">
+							<figure class="elementor-image-box-img"><img decoding="async" width="150" height="150"
+									src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E"
+									class="attachment-thumbnail size-thumbnail wp-image-5091" alt=""
+									data-lazy-srcset="wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 150w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 300w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 100w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 512w"
+									data-lazy-sizes="(max-width: 150px) 100vw, 150px"
+									data-lazy-src="wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp" /><noscript><img
+										decoding="async" width="150" height="150"
+										src="wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp"
+										class="attachment-thumbnail size-thumbnail wp-image-5091" alt=""
+										srcset="wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 150w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 300w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 100w, wp-content/uploads/2024/03/psikologi-konsultasi-risize-65bbb39a38053.webp 512w"
+										sizes="(max-width: 150px) 100vw, 150px" /></noscript></figure>
+							<div class="elementor-image-box-content">
+								<h3 class="elementor-image-box-title">Personal Coach</h3>
+								<p class="elementor-image-box-description">Kamu akan didampingi oleh Personal Coach yang
+									profesional dan kompeten dibidangnya untuk memberikan layanan Coaching melalui
+									webinar dan Group Belajar Telegram TKD.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-886a0c7 elementor-align-center elementor-mobile-align-center elementor-widget__width-inherit elementor-tablet-align-center elementor-widget elementor-widget-button"
+					data-id="886a0c7" data-element_type="widget" data-widget_type="button.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-button-wrapper">
+							<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+								href="https://nanya.online/konsultasi-pppk-cpns" target="_blank" rel="noopener">
+								<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+											viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+											</path>
+										</svg> </span>
+									<span class="elementor-button-text">Konsultasi Sekarang</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-b3bcb50 e-flex e-con-boxed e-con e-parent" data-id="b3bcb50"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-4547a56 elementor-widget elementor-widget-menu-anchor"
+					data-id="4547a56" data-element_type="widget" data-widget_type="menu-anchor.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-menu-anchor" id="layanan"></div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-7df5051 elementor-widget-divider--view-line_icon elementor-widget__width-inherit elementor-view-default elementor-widget-divider--element-align-center elementor-widget elementor-widget-divider"
+					data-id="7df5051" data-element_type="widget" data-widget_type="divider.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-divider">
+							<span class="elementor-divider-separator">
+								<div class="elementor-icon elementor-divider__element">
+									<svg aria-hidden="true" class="e-font-icon-svg e-fas-star" viewBox="0 0 576 512"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+										</path>
+									</svg>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-a12f093 elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+					data-id="a12f093" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Kami Memberikan Layanan Terbaik,
+							&amp; Terlengkap
+							Sampai Lolos Masuk BUMN</h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-fb28404 elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
+					data-id="fb28404" data-element_type="widget" data-widget_type="text-editor.default">
+					<div class="elementor-widget-container">
+						<p>Layanan Kami Diantaranya:</p>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-dd89eb0 e-con-full elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child"
+					data-id="dd89eb0" data-element_type="container">
+					<div class="elementor-element elementor-element-bf82178 elementor-widget elementor-widget-image"
+						data-id="bf82178" data-element_type="widget" data-widget_type="image.default">
+						<div class="elementor-widget-container">
+							<img decoding="async" width="768" height="768"
+								src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20768'%3E%3C/svg%3E"
+								class="attachment-medium_large size-medium_large wp-image-5101" alt=""
+								data-lazy-srcset="/wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 768w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 300w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 1024w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 150w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 600w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 100w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 1080w"
+								data-lazy-sizes="(max-width: 768px) 100vw, 768px"
+								data-lazy-src="/wp-content/uploads/2024/03/asset-web-bumn-768x768.webp" /><noscript><img
+									decoding="async" width="768" height="768"
+									src="/wp-content/uploads/2024/03/asset-web-bumn-768x768.webp"
+									class="attachment-medium_large size-medium_large wp-image-5101" alt=""
+									srcset="/wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 768w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 300w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 1024w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 150w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 600w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 100w, /wp-content/uploads/2024/03/asset-web-bumn-768x768.webp 1080w"
+									sizes="(max-width: 768px) 100vw, 768px" /></noscript>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-a457aca e-con-full e-flex e-con e-child"
+					data-id="a457aca" data-element_type="container">
+					<div class="elementor-element elementor-element-aed2bd8 align-at-right uael-faq-box-layout-yes elementor-widget elementor-widget-uael-faq"
+						data-id="aed2bd8" data-element_type="widget" data-widget_type="uael-faq.default">
+						<div class="elementor-widget-container">
+
+							<div id='uael-faq-wrapper-183' class="uael-faq-wrapper">
+								<div class="uael-faq-container uael-faq-layout-accordion" data-layout="toggle">
+									<div id="uael-accordion-a77585f" class="uael-faq-accordion" role="tablist">
+										<div class="uael-accordion-title" aria-expanded="false" role="tab">
+											<span class="uael-accordion-icon uael-accordion-icon-right">
+												<span class="uael-accordion-icon-closed"><svg
+														class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+												<span class="uael-accordion-icon-opened"><svg
+														class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+											</span>
+											<h3 class="uael-question-a77585f uael-question-span" tabindex="0"
+												id="uael-faq-1">Pembahasan Tes Kemampuan Dasar (TKD)</h3>
+										</div>
+										<div class="uael-accordion-content" role="tabpanel">
+											<span>
+												<span>
+													<p style="text-align: left;">Tes TKD dirancang khusus untuk menguji
+														kemampuan verbal para peserta yang mengikuti seleksi BUMN.</p>
+													<p style="text-align: left;">Kebanyakan materi yang dibahas pada tes
+														TKD berupa soal analogi, silogisme, analitik, deret angka,
+														perbandingan kuantitatif, dan soal cerita</p>
+												</span> </span>
+										</div>
+									</div>
+									<div id="uael-accordion-eb2e41c" class="uael-faq-accordion" role="tablist">
+										<div class="uael-accordion-title" aria-expanded="false" role="tab">
+											<span class="uael-accordion-icon uael-accordion-icon-right">
+												<span class="uael-accordion-icon-closed"><svg
+														class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+												<span class="uael-accordion-icon-opened"><svg
+														class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+											</span>
+											<h3 class="uael-question-eb2e41c uael-question-span" tabindex="0"
+												id="uael-faq-2">Pembahsan Tes Core Values (AKHLAK)</h3>
+										</div>
+										<div class="uael-accordion-content" role="tabpanel">
+											<span>
+												<span>
+													<p>Tes core value AKHLAK bertujuan untuk mengukur kemampuan peserta
+														dalam menghadapi sebuah problem tertentu dengan tindakan yang
+														sesuai dengan nilai-nilai core value.</p>
+													<p><strong>Tes core value AKHLAK meliputi</strong>: amanah,
+														kompeten, harmonis, loyal, adaptif, dan kolaboratif.</p>
+												</span> </span>
+										</div>
+									</div>
+									<div id="uael-accordion-89443b8" class="uael-faq-accordion" role="tablist">
+										<div class="uael-accordion-title" aria-expanded="false" role="tab">
+											<span class="uael-accordion-icon uael-accordion-icon-right">
+												<span class="uael-accordion-icon-closed"><svg
+														class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+												<span class="uael-accordion-icon-opened"><svg
+														class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+											</span>
+											<h3 class="uael-question-89443b8 uael-question-span" tabindex="0"
+												id="uael-faq-3">Pembahasa Bahasa Inggris</h3>
+										</div>
+										<div class="uael-accordion-content" role="tabpanel">
+											<span>
+												<span>
+													<p>Dalam tes ini, kemampuan berbahasa Inggris peserta dinilai dari
+														berbagai sudut pandang, termasuk tata bahasa, kosa kata,
+														membaca, mendengarkan, dan berbicara.</p>
+												</span> </span>
+										</div>
+									</div>
+									<div id="uael-accordion-8823537" class="uael-faq-accordion" role="tablist">
+										<div class="uael-accordion-title" aria-expanded="false" role="tab">
+											<span class="uael-accordion-icon uael-accordion-icon-right">
+												<span class="uael-accordion-icon-closed"><svg
+														class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+												<span class="uael-accordion-icon-opened"><svg
+														class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+														</path>
+													</svg></span>
+											</span>
+											<h3 class="uael-question-8823537 uael-question-span" tabindex="0"
+												id="uael-faq-4">Pembahasan Tes Kompetensi Bidang (TKB)</h3>
+										</div>
+										<div class="uael-accordion-content" role="tabpanel">
+											<span>
+												<span>
+													<p>Soal-soal TKB dapat mencakup pertanyaan yang berkaitan dengan
+														teori, konsep, atau praktik dari bidang yang bersangkutan dan
+														mengevaluasi kemampuan peserta sesuai dengan bidang atau
+														spesialisasi yang mereka lamar.</p>
+												</span> </span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-88cc21d elementor-align-center elementor-mobile-align-center elementor-widget__width-inherit elementor-tablet-align-center elementor-widget elementor-widget-button"
+					data-id="88cc21d" data-element_type="widget" data-widget_type="button.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-button-wrapper">
+							<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+								href="https://nanya.online/konsultasi-pppk-cpns" target="_blank" rel="noopener">
+								<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+											viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+											</path>
+										</svg> </span>
+									<span class="elementor-button-text">Konsultasi Sekarang</span>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-4e341b6 e-con-full e-flex e-con e-parent" data-id="4e341b6"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-element elementor-element-3ab1e50 elementor-widget elementor-widget-menu-anchor"
+				data-id="3ab1e50" data-element_type="widget" data-widget_type="menu-anchor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-menu-anchor" id="program"></div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-56db6e4 elementor-widget-divider--view-line_icon elementor-view-default elementor-widget-divider--element-align-center elementor-widget elementor-widget-divider"
+				data-id="56db6e4" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+						<span class="elementor-divider-separator">
+							<div class="elementor-icon elementor-divider__element">
+								<svg aria-hidden="true" class="e-font-icon-svg e-fas-clipboard-check"
+									viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm121.2 231.8l-143 141.8c-4.7 4.7-12.3 4.6-17-.1l-82.6-83.3c-4.7-4.7-4.6-12.3.1-17L99.1 285c4.7-4.7 12.3-4.6 17 .1l46 46.4 106-105.2c4.7-4.7 12.3-4.6 17 .1l28.2 28.4c4.7 4.8 4.6 12.3-.1 17z">
+									</path>
+								</svg>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-da5f0d6 elementor-widget__width-inherit elementor-widget-mobile__width-inherit elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading"
+				data-id="da5f0d6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Program Persiapan BUMN</h2>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-4bc6c98 elementor-widget__width-inherit elementor-widget-mobile__width-auto elementor-widget elementor-widget-text-editor"
+				data-id="4bc6c98" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<p>Sukses CPNS memberikan program bimbingan belajar yang terfokus dan terlengkap untuk menghadapi
+						seleksi lolos BUMN</p>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-309ec2f e-flex e-con-boxed e-con e-child" data-id="309ec2f"
+				data-element_type="container">
+				<div class="e-con-inner">
+					<div class="elementor-element elementor-element-e3d8983 e-con-full e-flex e-con e-child"
+						data-id="e3d8983" data-element_type="container">
+						<div class="elementor-element elementor-element-8176cf4 elementor-widget elementor-widget-heading"
+							data-id="8176cf4" data-element_type="widget" data-widget_type="heading.default">
+							<div class="elementor-widget-container">
+								<h2 class="elementor-heading-title elementor-size-default">Platinum Private</h2>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-101c9ff elementor-widget-tablet__width-initial elementor-widget elementor-widget-text-editor"
+							data-id="101c9ff" data-element_type="widget" data-widget_type="text-editor.default">
+							<div class="elementor-widget-container">
+								<p>Program intensif dengan sistem pembelajaran personal privat 1 tutor dan 1 siswa</p>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-d28c43b elementor-widget__width-inherit elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+							data-id="d28c43b" data-element_type="widget" data-widget_type="icon-list.default">
+							<div class="elementor-widget-container">
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-check"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+												</path>
+											</svg> </span>
+										<span class="elementor-icon-list-text">Assesment test sebelum
+											pembelajaran</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-check"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+												</path>
+											</svg> </span>
+										<span class="elementor-icon-list-text">Guru Terbaik</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-check"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+												</path>
+											</svg> </span>
+										<span class="elementor-icon-list-text">Try Out</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-check"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+												</path>
+											</svg> </span>
+										<span class="elementor-icon-list-text">Report Pembelajaran</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-check"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+												</path>
+											</svg> </span>
+										<span class="elementor-icon-list-text">Garansi Guru Terbaik</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-b33bdb6 elementor-align-center elementor-mobile-align-center elementor-widget__width-inherit elementor-tablet-align-center elementor-widget elementor-widget-button"
+							data-id="b33bdb6" data-element_type="widget" data-widget_type="button.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-button-wrapper">
+									<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+										href="https://nanya.online/konsultasi-pppk-cpns" target="_blank" rel="noopener">
+										<span class="elementor-button-content-wrapper">
+											<span class="elementor-button-icon">
+												<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+													viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+													</path>
+												</svg> </span>
+											<span class="elementor-button-text">Konsultasi Sekarang</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-8a54d7c e-flex e-con-boxed e-con e-parent" data-id="8a54d7c"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-28f7734 elementor-widget__width-inherit elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+					data-id="28f7734" data-element_type="widget" data-widget_type="heading.default">
+					<div class="elementor-widget-container">
+						<h2 class="elementor-heading-title elementor-size-default">Partner Kami </h2>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-2fc36d1 elementor-skin-carousel elementor-widget elementor-widget-media-carousel"
+					data-id="2fc36d1" data-element_type="widget"
+					data-settings="{&quot;lazyload&quot;:&quot;yes&quot;,&quot;slides_per_view_tablet&quot;:&quot;3&quot;,&quot;slides_per_view_mobile&quot;:&quot;2&quot;,&quot;space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;skin&quot;:&quot;carousel&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;loop&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}"
+					data-widget_type="media-carousel.default">
+					<div class="elementor-widget-container">
+						<div class="elementor-swiper">
+							<div class="elementor-main-swiper swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img" aria-label="patner"
+											data-background="/wp-content/uploads/2023/08/LP3I-e1719997560634-300x300.webp">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img" aria-label="patner"
+											data-background="/wp-content/uploads/2023/08/MA-e1719997617701-300x300.webp">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img"
+											aria-label="logo kemendag"
+											data-background="/wp-content/uploads/2023/08/logo-kemendag.svg">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img" aria-label="patner"
+											data-background="/wp-content/uploads/2023/08/PERINDUSTRIA-e1719998049768-300x300.webp">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img" aria-label="patner"
+											data-background="/wp-content/uploads/2023/08/RSUP-FATMAWATI-e1719997997273-300x300.webp">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="elementor-carousel-image swiper-lazy" role="img" aria-label="patner"
+											data-background="/wp-content/uploads/2023/08/KEMENDAGRI-1-e1719997948492-300x300.webp">
+
+											<div class="swiper-lazy-preloader"></div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-2561756 e-flex e-con-boxed e-con e-parent" data-id="2561756"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-element elementor-element-f291cfa e-con-full e-flex e-con e-child"
+					data-id="f291cfa" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-7677c34 e-flex e-con-boxed e-con e-child"
+						data-id="7677c34" data-element_type="container">
+						<div class="e-con-inner">
+							<div class="elementor-element elementor-element-1f7f393 elementor-widget__width-inherit elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-widget elementor-widget-heading"
+								data-id="1f7f393" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">Raih Cita-Cita Lolos
+										BUMN<br> Bersama SUKSES CPNS</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-8b0431c elementor-tablet-align-left elementor-align-left elementor-widget__width-inherit elementor-mobile-align-center elementor-widget elementor-widget-button"
+								data-id="8b0431c" data-element_type="widget" data-widget_type="button.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+										<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-shrink"
+											href="https://nanya.online/konsultasi-sukses-cpns" target="_blank"
+											rel="noopener">
+											<span class="elementor-button-content-wrapper">
+												<span class="elementor-button-icon">
+													<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-right"
+														viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+														</path>
+													</svg> </span>
+												<span class="elementor-button-text">Konsultasi Sekarang</span>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-37c4b74 e-flex e-con-boxed e-con e-child"
+						data-id="37c4b74" data-element_type="container">
+						<div class="e-con-inner">
+							<div class="elementor-element elementor-element-2cf7ff2 elementor-widget elementor-widget-image"
+								data-id="2cf7ff2" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img fetchpriority="high" decoding="async" width="768" height="768"
+										src="/wp-content/uploads/2024/03/footer-image-768x768.webp"
+										class="attachment-medium_large size-medium_large wp-image-4650" alt=""
+										srcset="/wp-content/uploads/2024/03/footer-image-768x768.webp 768w, /wp-content/uploads/2024/03/footer-image-768x768.webp 300w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1024w, /wp-content/uploads/2024/03/footer-image-768x768.webp 150w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1536w, /wp-content/uploads/2024/03/footer-image-768x768.webp 600w, /wp-content/uploads/2024/03/footer-image-768x768.webp 100w, /wp-content/uploads/2024/03/footer-image-768x768.webp 1706w"
+										sizes="(max-width: 768px) 100vw, 768px" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-603d9a1 e-con-full e-flex e-con e-parent" data-id="603d9a1"
+			data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-element elementor-element-c6e7d95 elementor-widget-mobile__width-initial elementor-widget__width-initial elementor-widget elementor-widget-image-box"
+				data-id="c6e7d95" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper">
+						<div class="elementor-image-box-content">
+							<h2 class="elementor-image-box-title">Learning Center</h2>
+							<p class="elementor-image-box-description">Grha Kreasi Bintang Edukasi – Jalan Alternatif
+								Cibubur, Ruko Kranggan Permai RT. 16, No. 5, Jatisampurna, Bekasi, Jawa Barat. 17435</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-118b5a0 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-image-box"
+				data-id="118b5a0" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper">
+						<div class="elementor-image-box-content">
+							<h3 class="elementor-image-box-title">Cabang Solo</h3>
+							<p class="elementor-image-box-description">Jl. Embarkasi Haji, Donohudan, Kec. Ngemplak,
+								Kabupaten Boyolali, Jawa Tengah. 57375</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-524d8d2 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-image-box"
+				data-id="524d8d2" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper">
+						<div class="elementor-image-box-content">
+							<h3 class="elementor-image-box-title">Cabang Jambi</h3>
+							<p class="elementor-image-box-description">Jl. Raden Wijaya Lorong Galaxy No 98 B, Kebon
+								Kopi. Jambi Selatan</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-d7bc8f2 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+				data-id="d7bc8f2" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+						<span class="elementor-divider-separator">
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-2915e35 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor"
+				data-id="2915e35" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<p>© PT KREASI BINTANG EDUKASI</p>
+				</div>
+			</div>
+		</div>
+		<div class="elementor-element elementor-element-7d75074a elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-parent"
+			data-id="7d75074a" data-element_type="container"
+			data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
+			<div class="e-con-inner">
+				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
+						<path class="elementor-shape-fill"
+							d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z" />
+						<path class="elementor-shape-fill"
+							d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z" />
+						<path class="elementor-shape-fill"
+							d="M227.4,9.8c-0.2-0.1-4.5-1-9.5-1.2c-5-0.2-12.7,0.6-12.3,0.5c0.3-0.1,5.9-1.8,13.3-1.2	S227.6,9.9,227.4,9.8z" />
+						<path class="elementor-shape-fill"
+							d="M204.5,13.4c-0.1-0.1,2-1,3.2-1.1c1.2-0.1,2,0,2,0.3c0,0.3-0.1,0.5-1.6,0.4	C206.4,12.9,204.6,13.5,204.5,13.4z" />
+						<path class="elementor-shape-fill"
+							d="M201,10.6c0-0.1-4.4,1.2-6.3,2.2c-1.9,0.9-6.2,3.1-6.1,3.1c0.1,0.1,4.2-1.6,6.3-2.6	S201,10.7,201,10.6z" />
+						<path class="elementor-shape-fill"
+							d="M154.5,26.7c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C152.6,27.5,154.6,26.8,154.5,26.7z" />
+						<path class="elementor-shape-fill"
+							d="M41.9,19.3c0,0,1.2-0.3,2.9-0.1c1.7,0.2,5.8,0.9,8.2,0.7c4.2-0.4,7.4-2.7,7-2.6	c-0.4,0-4.3,2.2-8.6,1.9c-1.8-0.1-5.1-0.5-6.7-0.4S41.9,19.3,41.9,19.3z" />
+						<path class="elementor-shape-fill"
+							d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z" />
+						<path class="elementor-shape-fill"
+							d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z" />
+					</svg>
+				</div>
+				<div class="elementor-element elementor-element-5c752f48 e-con-full e-flex e-con e-child"
+					data-id="5c752f48" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-1e446400 elementor-widget elementor-widget-heading"
+						data-id="1e446400" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h2 class="elementor-heading-title elementor-size-default">Platinum Private</h2>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-4945c2b1 elementor-widget elementor-widget-text-editor"
+						data-id="4945c2b1" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>Program intensif paling maksimal untuk persiapan calon ASN</p>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-4f6b1aed elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="4f6b1aed" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-4a6d4fdc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+						data-id="4a6d4fdc" data-element_type="widget" data-widget_type="icon-list.default">
+						<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">40x Sesi Belajar</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Modul CPNS</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Konsultasi</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Akses Eduline</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Personal Coach</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Ruang belajar nyaman</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Guru Profesional</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Grup Belajar Ekslusif</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> GARANSI Ganti Guru</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-7fe121d5 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="7fe121d5" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-54aff6b elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button"
+						data-id="54aff6b" data-element_type="widget" data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-shrink"
+									href="#form-section">
+									<span class="elementor-button-content-wrapper">
+										<span class="elementor-button-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-sign-out-alt"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
+												</path>
+											</svg> </span>
+										<span class="elementor-button-text">Konsultasi Sekarang</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-8cbc2fe e-con-full e-flex e-con e-child"
+					data-id="8cbc2fe" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-33ec4a1b elementor-widget elementor-widget-heading"
+						data-id="33ec4a1b" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h2 class="elementor-heading-title elementor-size-default">Medium Private</h2>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-1ac7efb3 elementor-widget elementor-widget-text-editor"
+						data-id="1ac7efb3" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>Program optimal harga kompetitif untuk persiapan calon ASN</p>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-37e4c32e elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="37e4c32e" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-5efdcf6b elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+						data-id="5efdcf6b" data-element_type="widget" data-widget_type="icon-list.default">
+						<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">20x Sesi Belajar</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Konsultasi</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Akses Eduline</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Personal Coach</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Ruang belajar nyaman</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Materi &amp; Soal Lengkap</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Guru Profesional</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Grup Belajar Ekslusif</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-39c48372 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="39c48372" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-39c50960 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button"
+						data-id="39c50960" data-element_type="widget" data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-shrink"
+									href="#form-section">
+									<span class="elementor-button-content-wrapper">
+										<span class="elementor-button-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-sign-out-alt"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
+												</path>
+											</svg> </span>
+										<span class="elementor-button-text">Konsultasi Sekarang</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="elementor-element elementor-element-378ac89d e-con-full e-flex e-con e-child"
+					data-id="378ac89d" data-element_type="container"
+					data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-36e94080 elementor-widget elementor-widget-heading"
+						data-id="36e94080" data-element_type="widget" data-widget_type="heading.default">
+						<div class="elementor-widget-container">
+							<h2 class="elementor-heading-title elementor-size-default">Lite Private</h2>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-6dd26ae4 elementor-widget elementor-widget-text-editor"
+						data-id="6dd26ae4" data-element_type="widget" data-widget_type="text-editor.default">
+						<div class="elementor-widget-container">
+							<p>Program mini harga ekonomis untuk persiapan calon ASN</p>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-2459e0b0 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="2459e0b0" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-5b82d3fa elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+						data-id="5b82d3fa" data-element_type="widget" data-widget_type="icon-list.default">
+						<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">10x Sesi Belajar</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Konsultasi</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Akses Eduline</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">FREE Personal Coach</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Ruang belajar nyaman</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text">Materi &amp; Soal Lengkap</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Guru Profesional</span>
+								</li>
+								<li class="elementor-icon-list-item">
+									<span class="elementor-icon-list-icon">
+										<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
+											viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+											</path>
+										</svg> </span>
+									<span class="elementor-icon-list-text"> Grup Belajar Ekslusif</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-2f1e0b42 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+						data-id="2f1e0b42" data-element_type="widget" data-widget_type="spacer.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+								<div class="elementor-spacer-inner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-element elementor-element-21becf35 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button"
+						data-id="21becf35" data-element_type="widget" data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-shrink"
+									href="#form-section">
+									<span class="elementor-button-content-wrapper">
+										<span class="elementor-button-icon">
+											<svg aria-hidden="true" class="e-font-icon-svg e-fas-sign-out-alt"
+												viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
+												</path>
+											</svg> </span>
+										<span class="elementor-button-text">Konsultasi Sekarang</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hello-elementor\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+	<link rel="stylesheet"
+		href="/wp-content/cache/background-css/1/suksescpns.id/wp-content/plugins/watzap/assets/vendor/intltel/css/intlTelInput.min.css?wpr_t=1762571022" />
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+		data-rocket-src="/wp-content/plugins/watzap/assets/vendor/intltel/js/intlTelInput.min.js"
+		data-rocket-defer defer></script>
+
+	<style type="text/css">
+		.iti__country {
+			margin: 0 !important;
+			padding: 5px 10px !important;
+		}
+
+		.iti__country-name,
+		.iti__flag-box {
+			color: black;
+			margin-right: 6px !important;
+
+		}
+
+		.iti__flag-box {
+			width: 20px !important;
+		}
+
+		.iti__flag {
+			height: 15px !important;
+			box-shadow: 0 0 1px 0 #888 !important;
+			background-image: var(--wpr-bg-b2557a42-3b22-4773-87b6-70464e786ff1) !important;
+			background-repeat: no-repeat !important;
+			background-color: #dbdbdb !important;
+			background-position: 20px 0 !important;
+			width: 20px !important;
+		}
+
+		.iti__divider {
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			margin-top: 0px !important;
+		}
+
+		.iti {
+			display: block !important;
+			position: relative !important;
+		}
+
+		.iti--separate-dial-code .iti__selected-dial-code {
+			color: black;
+			margin-left: 6px !important;
+		}
+
+		.iti__flag-container {
+			position: absolute !important;
+		}
+
+		.iti__selected-flag {
+			position: relative !important;
+			padding: 0 6px 0 8px !important;
+			height: 100% !important;
+		}
+
+		.iti__arrow {
+			margin-left: 6px !important;
+			width: 0 !important;
+			height: 0 !important;
+			border-left: 3px solid transparent !important;
+			border-right: 3px solid transparent !important;
+			border-top: 4px solid #555 !important;
+		}
+
+		.iti--separate-dial-code .iti__selected-flag {
+			background-color: rgba(0, 0, 0, .05) !important;
+		}
+
+		.iti__country-list {
+			position: absolute !important;
+			z-index: 2 !important;
+			list-style: none !important;
+			text-align: left !important;
+			padding: 0 !important;
+			margin: 0 0 0 -1px !important;
+			box-shadow: 1px 1px 4px rgb(0 0 0 / 20%) !important;
+			background-color: #fff !important;
+			border: 1px solid #ccc !important;
+			white-space: nowrap !important;
+			max-height: 200px !important;
+			overflow-y: scroll !important;
+			-webkit-overflow-scrolling: touch !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list {
+			position: absolute !important;
+			z-index: 2 !important;
+			list-style: none !important;
+			text-align: left !important;
+			padding: 0 !important;
+			margin: 0 0 0 -1px !important;
+			box-shadow: 1px 1px 4px rgb(0 0 0 / 20%) !important;
+			background-color: #fff !important;
+			border: 1px solid #ccc !important;
+			white-space: nowrap !important;
+			max-height: 200px !important;
+			overflow-y: scroll !important;
+			-webkit-overflow-scrolling: touch !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list li {
+			margin-bottom: 0px !important;
+			padding: 5px 10px !important;
+		}
+
+		div.wpforms-container-full .wpforms-form ul.iti__country-list li.iti__highlight {
+			background-color: rgba(0, 0, 0, .05) !important;
+		}
+	</style>
+
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+
+
+
+        var wzp_serializer=function(e){for(var n=[],o=0;o<e.length;o++){var t=e[o];if(t.name&&!t.disabled&&"file"!==t.type&&"reset"!==t.type&&"submit"!==t.type&&"button"!==t.type)if("select-multiple"===t.type)for(var p=0;p<t.options.length;p++)t.options[p].selected&&n.push(encodeURIComponent(t.name)+"="+encodeURIComponent(t.options[p].value));else("checkbox"!==t.type&&"radio"!==t.type||t.checked)&&n.push(encodeURIComponent(t.name)+"="+encodeURIComponent(t.value))}return n.join("&")};
+        
+        try{
+
+          
+                var wzp_form_handler_1 = (wzp_prev_1) => { /in/.test(document.readyState) ? setTimeout("wzp_form_handler_1(" + wzp_prev_1 + ")", 10) : wzp_prev_1() }
+  
+                wzp_form_handler_1(function(){
+                    var fId1 = "keform";
+                    var element1 =  document.getElementById(fId1);
+                      if (typeof(element1) != "undefined" && element1 != null)
+                      {
+                        
+                        var send = "false";
+                        
+                        sessionStorage["send"] = "false";
+                        
+                        sessionStorage["formAjax"] = "";
+                        if (document.querySelector("form#"+ fId1) != null) {
+                          document.querySelector("form#"+ fId1).addEventListener("submit", function(e){
+                            
+                            if (sessionStorage["send"] == "false") {
+                              e.preventDefault();
+                                var data_text=document.querySelectorAll("form#"+ fId1 + " input[type=text]");
+                                var data_number=document.querySelectorAll("form#"+ fId1 + " input[type=number]");
+                                var data_date=document.querySelectorAll("form#"+ fId1 + " input[type=date]");
+                                var data_phone=document.querySelectorAll("form#"+ fId1 + " input[type=phone]");
+                                var data_email=document.querySelectorAll("form#"+ fId1 + " input[type=email]");
+                                var data_tel=document.querySelectorAll("form#"+ fId1 + " input[type=tel]");
+                                var data_radio=document.querySelectorAll("form#"+ fId1 + " input[type=radio]");
+                                var data_checkbox=document.querySelectorAll("form#"+ fId1 + " input[type=checkbox]");
+                                var data_select=document.querySelectorAll("form#"+ fId1 + " select");
+                                var data_textarea=document.querySelectorAll("form#"+ fId1 + " textarea");
+                                var data_time=document.querySelectorAll("form#"+ fId1 + " input[type=time]"); // edit --gufron--
+  
+                                a =wzp_serializer(document.querySelectorAll("form#"+ fId1 + " input[type=hidden]"));
+                                b = new URLSearchParams(a)
+                                b.delete("_wp_http_referer")
+                                b.delete("_cf_verify");
+                                b.delete("_cf_frm_id");
+                                b.delete("_cf_frm_ct");
+                                b.delete("_cf_frm_ct");
+                                b.delete("_cf_cr_pst");
+                                b.delete("_wpcf7");
+                                b.delete("_wpcf7_version");
+                                b.delete("_wpcf7_locale");
+                                b.delete("_wpcf7_unit_tag");
+                                b.delete("_wpcf7_container_post");
+                                b.delete("_wpcf7_posted_data_hash");
+                                b.delete("action");
+                                var data_hidden = b.toString();
+  
+                                var data="id=1&provider=Form by KIRIM.EMAIL&action=wzp_handler_submit_form&"+wzp_serializer(data_text)+"&"+wzp_serializer(data_number)+"&"+wzp_serializer(data_phone)+"&"+wzp_serializer(data_date)+"&"+wzp_serializer(data_email)+"&"+wzp_serializer(data_textarea)+"&"+wzp_serializer(data_tel)+"&"+wzp_serializer(data_radio)+"&"+wzp_serializer(data_select)+"&"+wzp_serializer(data_checkbox)+"&"+wzp_serializer(data_time)+"&"+data_hidden;
+                      
+                                var xhttp;
+                                xhttp=new XMLHttpRequest();
+                                xhttp.onreadystatechange = function(res) {
+  
+                                  if (this.readyState == XMLHttpRequest.DONE) {
+                                    console.log("Res Text",this.responseText);
+                                  }
+                                  if (this.readyState == 4 && this.status == 200) {
+                                    sessionStorage["send"] = "true";
+                                    sessionStorage["formAjax"] = "1"; 
+                                    
+                                  }
+                                };
+                      
+                                var url="/wp-admin/admin-ajax.php";
+                                xhttp.open("POST", url, true);
+                                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                xhttp.send(data);
+                            }else{
+                                console.log("else");
+                                sessionStorage["formAjax"] = "";
+                            }
+                                return false;
+                          });
+                        } 
+                      }
+                  });
+                
+          
+        }catch(ex){
+          console.log('WZP Form Err', ex);
+        }
+        
+    </script>
+	<script
+		type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pembahasan Tes Kemampuan Dasar (TKD)","acceptedAnswer":{"@type":"Answer","text":"<p style=\"text-align: left;\">Tes TKD dirancang khusus untuk menguji kemampuan verbal para peserta yang mengikuti seleksi BUMN.</p><p style=\"text-align: left;\">Kebanyakan materi yang dibahas pada tes TKD berupa soal analogi, silogisme, analitik, deret angka, perbandingan kuantitatif, dan soal cerita</p>"}},{"@type":"Question","name":"Pembahsan Tes Core Values (AKHLAK)","acceptedAnswer":{"@type":"Answer","text":"<p>Tes core value AKHLAK bertujuan untuk mengukur kemampuan peserta dalam menghadapi sebuah problem tertentu dengan tindakan yang sesuai dengan nilai-nilai core value.</p><p><strong>Tes core value AKHLAK meliputi</strong>: amanah, kompeten, harmonis, loyal, adaptif, dan kolaboratif.</p>"}},{"@type":"Question","name":"Pembahasa Bahasa Inggris","acceptedAnswer":{"@type":"Answer","text":"<p>Dalam tes ini, kemampuan berbahasa Inggris peserta dinilai dari berbagai sudut pandang, termasuk tata bahasa, kosa kata, membaca, mendengarkan, dan berbicara.</p>"}},{"@type":"Question","name":"Pembahasan Tes Kompetensi Bidang (TKB)","acceptedAnswer":{"@type":"Answer","text":"<p>Soal-soal TKB dapat mencakup pertanyaan yang berkaitan dengan teori, konsep, atau praktik dari bidang yang bersangkutan dan mengevaluasi kemampuan peserta sesuai dengan bidang atau spesialisasi yang mereka lamar.</p>"}}]}</script>
+	<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+	<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+	<script id="rocket-preload-links-js-extra">
+		var RocketPreloadLinksConfig = { "excludeUris": "\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/suksescpns.id", "onHoverDelay": "100", "rateThrottle": "3" };
+	</script>
+	<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+	<script id="rocket_lazyload_css-js-extra">
+		var rocket_lazyload_css_data = { "threshold": "300" };
+	</script>
+	<script id="rocket_lazyload_css-js-after">
+		!function o(n, c, a) { function u(t, e) { if (!c[t]) { if (!n[t]) { var r = "function" == typeof require && require; if (!e && r) return r(t, !0); if (s) return s(t, !0); throw (e = new Error("Cannot find module '" + t + "'")).code = "MODULE_NOT_FOUND", e } r = c[t] = { exports: {} }, n[t][0].call(r.exports, function (e) { return u(n[t][1][e] || e) }, r, r.exports, o, n, c, a) } return c[t].exports } for (var s = "function" == typeof require && require, e = 0; e < a.length; e++)u(a[e]); return u }({ 1: [function (e, t, r) { "use strict"; { const c = "undefined" == typeof rocket_pairs ? [] : rocket_pairs, a = (("undefined" == typeof rocket_excluded_pairs ? [] : rocket_excluded_pairs).map(t => { var e = t.selector; document.querySelectorAll(e).forEach(e => { e.setAttribute("data-rocket-lazy-bg-" + t.hash, "excluded") }) }), document.querySelector("#wpr-lazyload-bg-container")); var o = rocket_lazyload_css_data.threshold || 300; const u = new IntersectionObserver(e => { e.forEach(t => { t.isIntersecting && c.filter(e => t.target.matches(e.selector)).map(t => { var e; t && ((e = document.createElement("style")).textContent = t.style, a.insertAdjacentElement("afterend", e), t.elements.forEach(e => { u.unobserve(e), e.setAttribute("data-rocket-lazy-bg-" + t.hash, "loaded") })) }) }) }, { rootMargin: o + "px" }); function n() { 0 < (0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : []).length && c.forEach(t => { try { document.querySelectorAll(t.selector).forEach(e => { "loaded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && "excluded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && (u.observe(e), (t.elements ||= []).push(e)) }) } catch (e) { console.error(e) } }) } n(), function () { const r = window.MutationObserver; return function (e, t) { if (e && 1 === e.nodeType) return (t = new r(t)).observe(e, { attributes: !0, childList: !0, subtree: !0 }), t } }()(document.querySelector("body"), n) } }, {}] }, {}, [1]);
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=3.1.1"
+		id="hello-theme-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.2"
+		id="elementor-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.2"
+		id="elementor-frontend-modules-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"
+		data-rocket-defer defer></script>
+	<script id="elementor-frontend-js-extra">
+		var uael_particles_script = { "uael_particles_url": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/min-js\/uael-particles.min.js", "particles_url": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/lib\/particles\/particles.min.js", "snowflakes_image": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/snowflake.svg", "gift": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/gift.png", "tree": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/tree.png", "skull": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/skull.png", "ghost": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/ghost.png", "moon": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/moon.png", "bat": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/bat.png", "pumpkin": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/pumpkin.png" };
+	</script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.32.2","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"landing-pages":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true,"mega-menu":true},"urls":{"assets":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/suksescpns.id\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"1e6258f36b"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal"},"post":{"id":551,"title":"Bimbel%20BUMN%20-%20Sukses%20CPNS","excerpt":"","featuredImage":false}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.2"
+		id="elementor-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript" id="elementor-frontend-js-after">window.addEventListener('DOMContentLoaded', function() {
+window.scope_array = [];
+								window.backend = 0;
+								jQuery.cachedScript = function( url, options ) {
+									// Allow user to set any option except for dataType, cache, and url.
+									options = jQuery.extend( options || {}, {
+										dataType: "script",
+										cache: true,
+										url: url
+									});
+									// Return the jqXHR object so we can chain callbacks.
+									return jQuery.ajax( options );
+								};
+							    jQuery( window ).on( "elementor/frontend/init", function() {
+									elementorFrontend.hooks.addAction( "frontend/element_ready/global", function( $scope, $ ){
+										if ( "undefined" == typeof $scope ) {
+												return;
+										}
+										if ( $scope.hasClass( "uael-particle-yes" ) ) {
+											window.scope_array.push( $scope );
+											$scope.find(".uael-particle-wrapper").addClass("js-is-enabled");
+										}else{
+											return;
+										}
+										if(elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0 ){
+											var uael_url = uael_particles_script.uael_particles_url;
+
+											jQuery.cachedScript( uael_url );
+											window.backend = 1;
+										}else if(elementorFrontend.isEditMode()){
+											var uael_url = uael_particles_script.uael_particles_url;
+											jQuery.cachedScript( uael_url ).done(function(){
+												var flag = true;
+											});
+										}
+									});
+								});
+								 jQuery( document ).on( "ready elementor/popup/show", () => {
+									if ( jQuery.find( ".uael-particle-yes" ).length < 1 ) {
+										return;
+									}
+									var uael_url = uael_particles_script.uael_particles_url;
+									jQuery.cachedScript = function( url, options ) {
+										// Allow user to set any option except for dataType, cache, and url.
+										options = jQuery.extend( options || {}, {
+											dataType: "script",
+											cache: true,
+											url: url
+										});
+										// Return the jqXHR object so we can chain callbacks.
+										return jQuery.ajax( options );
+									};
+									jQuery.cachedScript( uael_url );
+								});	
+});</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1"
+		id="jquery-numerator-js" data-rocket-defer defer></script>
+	<script id="uael-frontend-script-js-extra">
+		var uael_script = { "ajax_url": "https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php" };
+		var uael_post_loader_script = { "post_loader": "https:\/\/suksescpns.id\/wp-content\/plugins\/ultimate-elementor\/assets\/img\/post-loader.gif" };
+		var uael_login_form_script = { "ajax_url": "https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php", "invalid_mail": "Enter valid Email!", "pass_unmatch": "The specified password do not match!", "required": "This Field is required!", "incorrect_password": "Error: The Password you have entered is incorrect.", "invalid_username": "Unknown username. Check again or try your email address.", "invalid_email": "Unknown email address. Check again or try your username.", "logged_in_message": "Thanks for logging in, ", "wp_version": "1" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/ultimate-elementor/assets/min-js/uael-frontend.min.js?ver=1.36.29"
+		id="uael-frontend-script-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"
+		data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.19.2"
+		id="elementor-pro-webpack-runtime-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6"
+		id="wp-hooks-js"></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6"
+		id="wp-i18n-js"></script>
+	<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+	<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/admin-ajax.php","nonce":"0ebb393ea9","urls":{"assets":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/suksescpns.id\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/suksescpns.id\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.19.2"
+		id="elementor-pro-frontend-js" data-rocket-defer defer></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.19.2"
+		id="pro-preloaded-elements-handlers-js" data-rocket-defer defer></script>
+	<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
+			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+				var observer = new MutationObserver(function (mutations) {
+					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+						for (var i = 0; i < mutation.addedNodes.length; i++) {
+							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+							if (is_iframe) { iframe_count += 1 }
+						}
+					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+			}
+		}, !1)</script>
+	<script data-no-minify="1" async
+		src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+	<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
+</body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1762545822 -->

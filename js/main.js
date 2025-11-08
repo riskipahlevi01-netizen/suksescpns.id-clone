@@ -15,23 +15,38 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Deteksi apakah halaman di root atau subfolder (tentang-kami, blogs, dll)
-  const basePath =
-    window.location.pathname.includes("/tentang-kami") ||
-    window.location.pathname.includes("/blog") ||
-    window.location.pathname.includes("/bimbelcpns") ||
-    window.location.pathname.includes("/bimbelpppk") ||
-    window.location.pathname.includes("/bimbelbumn") ||
-    window.location.pathname.includes("/kontak-kami")
-      ? ".."
-      : ".";
+  // Tentukan basePath berdasarkan URL
+  const basePath = (() => {
+    const pathname = window.location.pathname;
+
+    // Naik dua level 
+    if (pathname.includes("/blog/detail/")) {
+      return "../../../";  // Naik dua folder
+    }
+
+    // Naik satu level 
+    if (pathname.includes("/tentang-kami") ||
+      pathname.includes("/bimbelcpns") ||
+      pathname.includes("/bimbelpppk") ||
+      pathname.includes("/bimbelbumn") ||
+      pathname.includes("/blog") ||
+      pathname.includes("/kontak-kami")) {
+      return "..";  // Naik satu folder
+    }
+
+    // Default jika berada di root atau folder yang sama
+    return "."; // Default
+  })();
 
   // Muat header dan footer
   await loadComponent("header", `${basePath}/components/header.html`);
   await loadComponent("footer", `${basePath}/components/footer.html`);
 
+
   // Menambahkan event listener untuk dropdown menu
   const menuItems = document.querySelectorAll(".menu-item");
+
+  
 
   menuItems.forEach((item) => {
     const subMenu = item.querySelector(".sub-menu");
@@ -53,5 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     new EducateWebsite();
   }
 });
+
+
+
 
 
