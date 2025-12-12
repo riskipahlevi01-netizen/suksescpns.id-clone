@@ -9,3 +9,53 @@
   position: relative; /* Pastikan elemen menu parent relative untuk menempatkan sub-menu dengan benar */
 }
 
+
+.elementor-widget-media-carousel .elementor-carousel-image {
+  height: 220px;                  /* Atur tinggi gambar sesuai kebutuhan */
+  background-size: cover;         /* Penuhi seluruh div */
+  background-position: center;    /* Posisi gambar di tengah */
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget-media-carousel .elementor-carousel-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-media-carousel .elementor-carousel-image {
+    height: 160px;
+  }
+}
+
+
+/* Menampilkan gambar di tengah dan menjaga rasio */
+.elementor-widget-media-carousel .elementor-carousel-image {
+  height: 220px;                 /* Atur tinggi gambar */
+  background-size: contain;      /* Gambar tidak terpotong */
+  background-position: center;   /* Posisi gambar di tengah */
+  background-repeat: no-repeat;  /* Tidak ada pengulangan gambar */
+  display: block;
+  width: 100%;                   /* Memenuhi lebar kontainer */
+}
+
+/* Responsif untuk tablet dan mobile */
+@media (max-width: 1024px) {
+  .elementor-widget-media-carousel .elementor-carousel-image {
+    height: 200px; /* Sesuaikan untuk tablet */
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-media-carousel .elementor-carousel-image {
+    height: 160px; /* Sesuaikan untuk mobile */
+  }
+}
+
+.elementor-video iframe {
+  width: 100%; /* Agar video memenuhi lebar container */
+  height: auto; /* Sesuaikan tinggi agar proporsional */
+}
+
