@@ -67,6 +67,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (typeof EducateWebsite === "function") {
     new EducateWebsite();
   }
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector('.elementor-menu-toggle');
+    const menu = document.querySelector('.elementor-nav-menu--main');
+    
+    // Periksa apakah menu toggle dan menu tersedia
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+            // Toggle kelas untuk menunjukkan atau menyembunyikan menu
+            menu.classList.toggle('elementor-nav-menu--open');
+            // Perbarui status toggle untuk aksesibilitas
+            const isExpanded = menu.classList.contains('elementor-nav-menu--open');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+    }
+});
+
 });
 
 

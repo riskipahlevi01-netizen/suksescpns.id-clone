@@ -59,3 +59,32 @@
   height: auto; /* Sesuaikan tinggi agar proporsional */
 }
 
+
+
+/* Menyembunyikan menu utama pada layar kecil */
+@media (max-width: 1024px) {
+    .elementor-nav-menu--main {
+        display: none; /* Sembunyikan menu utama di layar kecil */
+    }
+
+    /* Menampilkan tombol hamburger */
+    .elementor-menu-toggle {
+        display: block;
+    }
+
+    /* Tampilkan menu ketika tombol hamburger ditekan */
+    .elementor-nav-menu--open {
+        display: block; /* Menampilkan menu */
+    }
+
+    /* Menyembunyikan sub-menu secara default */
+    .elementor-nav-menu--dropdown {
+        display: none; /* Menyembunyikan dropdown pada layar kecil */
+    }
+
+    /* Tampilkan sub-menu saat hover atau saat tombol dipilih */
+    .elementor-nav-menu--open .elementor-nav-menu--dropdown {
+        display: block;
+    }
+}
+
