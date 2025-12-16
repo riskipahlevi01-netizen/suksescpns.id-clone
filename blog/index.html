@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="generator"
 		content="Elementor 3.32.2; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
 	
-	
+	<link rel="stylesheet" href="/css/style.css">
 	<script src="/js/head-loader.js"></script>
 </head>
 
@@ -102,6 +102,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	class="wp-singular page-template page-template-elementor_header_footer page page-id-3333 wp-custom-logo wp-theme-hello-elementor elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-3333">
 
 	<header></header>
+
+	<!-- MOBILE MENU TOGGLE -->
+	<button class="mm-toggle" id="mmToggle" aria-label="Toggle Menu">☰</button>
+
+	<!-- MOBILE MENU -->
+	<nav class="mm-panel" id="mmPanel">
+		<ul class="mm-list">
+			<li>
+				<span class="mm-parent">Program & Layanan</span>
+				<ul class="mm-sub">
+					<li><a href="/bimbelcpns/">Program Lolos CPNS</a></li>
+					<li><a href="/bimbelpppk/">Program Lolos PPPK</a></li>
+					<li><a href="/bimbelcpns">Program Lolos BUMN</a></li>
+				</ul>
+			</li>
+			<li><a href="/tentang-kami/">Tentang Kami</a></li>
+			<li><a href="/blog/">Blog</a></li>
+			<li><a href="/kontak-kami/">Kontak Kami</a></li>
+		</ul>
+	</nav>
+
+	<div class="mm-backdrop" id="mmBackdrop"></div>
 
 	<div data-elementor-type="wp-page" data-elementor-id="3333" class="elementor elementor-3333"
 		data-elementor-post-type="page">
@@ -869,6 +891,40 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/
 	<script data-no-minify="1" async
 		src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
 	<script>(() => { class RocketElementorPreload { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode-wpr", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } t() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this.i(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this.o(t) } catch (t) { } })) } o(t) { const e = JSON.parse(t.dataset.settings), i = e.m || e.animation_delay || 0, n = e[this.animationSettingKeys.find((t => e[t]))]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let o = setTimeout((() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this.l(t, e) }), i); window.addEventListener("rocket-startLoading", (function () { clearTimeout(o) })) } i(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach((t => { e.forEach((e => { i.push(t + e) })) })), i } l(t, e) { this.i().forEach((t => delete e[t])), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorPreload; requestAnimationFrame(t.t.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorPreload.run) })();</script>
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const toggle = document.getElementById("mmToggle");
+			const panel = document.getElementById("mmPanel");
+			const backdrop = document.getElementById("mmBackdrop");
+
+			toggle.addEventListener("click", () => {
+				const isOpen = panel.classList.toggle("active");
+				backdrop.classList.toggle("active", isOpen);
+
+				// ganti ikon
+				toggle.textContent = isOpen ? "✕" : "☰";
+				toggle.classList.toggle("active", isOpen);
+			});
+
+			backdrop.addEventListener("click", closeMenu);
+
+			function closeMenu() {
+				panel.classList.remove("active");
+				backdrop.classList.remove("active");
+				toggle.textContent = "☰";
+				toggle.classList.remove("active");
+			}
+
+			// submenu accordion
+			document.querySelectorAll(".mm-parent").forEach(parent => {
+				parent.addEventListener("click", () => {
+					parent.classList.toggle("active");
+				});
+			});
+		});
+	</script>
 
 	<script src="/js/main.js"></script>
 </body>

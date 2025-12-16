@@ -107,6 +107,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="icon" href="/wp-content/uploads/2023/05/logocpns.ico" sizes="192x192" />
 	<link rel="apple-touch-icon" href="/wp-content/uploads/2023/05/logocpns.ico" />
 	<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/05/logocpns.ico" />
+
+	<link rel="stylesheet" href="/css/style.css">
 	<script src="/js/head-loader.js"></script>
 
 </head>
@@ -119,6 +121,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<header></header>
 
+	<!-- MOBILE MENU TOGGLE -->
+	<button class="mm-toggle" id="mmToggle" aria-label="Toggle Menu">☰</button>
+
+	<!-- MOBILE MENU -->
+	<nav class="mm-panel" id="mmPanel">
+		<ul class="mm-list">
+			<li>
+				<span class="mm-parent">Program & Layanan</span>
+				<ul class="mm-sub">
+					<li><a href="/bimbelcpns/">Program Lolos CPNS</a></li>
+					<li><a href="/bimbelpppk/">Program Lolos PPPK</a></li>
+					<li><a href="/bimbelcpns">Program Lolos BUMN</a></li>
+				</ul>
+			</li>
+			<li><a href="/tentang-kami/">Tentang Kami</a></li>
+			<li><a href="/blog/">Blog</a></li>
+			<li><a href="/kontak-kami/">Kontak Kami</a></li>
+		</ul>
+	</nav>
+
+	<div class="mm-backdrop" id="mmBackdrop"></div>
 
 
 	<div data-elementor-type="wp-page" data-elementor-id="4548" class="elementor elementor-4548"
@@ -605,7 +628,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-			
+
 
 
 			<div class="elementor-element elementor-element-4e81783 e-con-full e-flex e-con e-child" data-id="e29e4de"
@@ -1592,29 +1615,38 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/suksescpns.id\/wp-admin\/
 
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			function applyBgFromData() {
-				document.querySelectorAll(".elementor-carousel-image[data-background]").forEach(function (el) {
-					var bg = el.getAttribute("data-background");
-					if (bg) el.style.backgroundImage = "url('" + bg + "')";
-				});
+		document.addEventListener("DOMContentLoaded", () => {
+			const toggle = document.getElementById("mmToggle");
+			const panel = document.getElementById("mmPanel");
+			const backdrop = document.getElementById("mmBackdrop");
+
+			toggle.addEventListener("click", () => {
+				const isOpen = panel.classList.toggle("active");
+				backdrop.classList.toggle("active", isOpen);
+
+				// ganti ikon
+				toggle.textContent = isOpen ? "✕" : "☰";
+				toggle.classList.toggle("active", isOpen);
+			});
+
+			backdrop.addEventListener("click", closeMenu);
+
+			function closeMenu() {
+				panel.classList.remove("active");
+				backdrop.classList.remove("active");
+				toggle.textContent = "☰";
+				toggle.classList.remove("active");
 			}
-			applyBgFromData();
-			setTimeout(applyBgFromData, 500);
-			setTimeout(applyBgFromData, 1500);
-		});
-	</script>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const menuToggle = document.querySelector('.elementor-menu-toggle');
-			const menu = document.querySelector('.elementor-nav-menu--main');
-
-			menuToggle.addEventListener('click', function () {
-				menu.classList.toggle('elementor-nav-menu--main--open'); // Tambah atau hapus kelas untuk toggle
+			// submenu accordion
+			document.querySelectorAll(".mm-parent").forEach(parent => {
+				parent.addEventListener("click", () => {
+					parent.classList.toggle("active");
+				});
 			});
 		});
 	</script>
+
 
 
 </body>

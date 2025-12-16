@@ -55,36 +55,121 @@
 }
 
 .elementor-video iframe {
-  width: 100%; /* Agar video memenuhi lebar container */
+  width: 70%; /* Agar video memenuhi lebar container */
   height: auto; /* Sesuaikan tinggi agar proporsional */
 }
 
 
-
-/* Menyembunyikan menu utama pada layar kecil */
-@media (max-width: 1024px) {
-    .elementor-nav-menu--main {
-        display: none; /* Sembunyikan menu utama di layar kecil */
-    }
-
-    /* Menampilkan tombol hamburger */
-    .elementor-menu-toggle {
-        display: block;
-    }
-
-    /* Tampilkan menu ketika tombol hamburger ditekan */
-    .elementor-nav-menu--open {
-        display: block; /* Menampilkan menu */
-    }
-
-    /* Menyembunyikan sub-menu secara default */
-    .elementor-nav-menu--dropdown {
-        display: none; /* Menyembunyikan dropdown pada layar kecil */
-    }
-
-    /* Tampilkan sub-menu saat hover atau saat tombol dipilih */
-    .elementor-nav-menu--open .elementor-nav-menu--dropdown {
-        display: block;
-    }
+/* HIDE BY DEFAULT */
+.mm-toggle,
+.mm-panel,
+.mm-backdrop {
+  display: none;
 }
 
+/* MOBILE ONLY */
+@media (max-width: 1024px){
+
+  /* Burger button */
+  .mm-toggle{
+    display:flex;
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:100001;
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:8px;
+    background:#2b155b;
+    color:#fff;
+    font-size:22px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+
+  /* Slide panel */
+  .mm-panel{
+    display:block;
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:82%;
+    max-width:360px;
+    height:100vh;
+    background:#fff;
+    z-index:100000;
+    padding:20px;
+    transition:right .35s ease;
+    overflow-y:auto;
+  }
+
+  .mm-panel.active{
+    right:0;
+  }
+
+  /* Close button */
+  .mm-close{
+    background:none;
+    border:none;
+    font-size:26px;
+    float:right;
+    cursor:pointer;
+  }
+
+  /* Backdrop */
+  .mm-backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    pointer-events:none;
+    z-index:99999;
+    transition:opacity .3s ease;
+  }
+
+  .mm-backdrop.active{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  /* Menu list */
+  .mm-list{
+    list-style:none;
+    padding:40px 0 0;
+    margin:0;
+  }
+
+  .mm-list li{
+    margin-bottom:18px;
+  }
+
+  .mm-list a,
+  .mm-parent{
+    font-size:18px;
+    font-weight:600;
+    color:#2b155b;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  /* Submenu */
+  .mm-sub{
+    list-style:none;
+    padding-left:16px;
+    margin-top:10px;
+    display:none;
+  }
+
+  .mm-sub li a{
+    font-size:16px;
+    font-weight:500;
+    color:#444;
+  }
+
+  .mm-parent.active + .mm-sub{
+    display:block;
+  }
+}
